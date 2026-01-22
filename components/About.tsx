@@ -19,7 +19,7 @@ export default function About() {
                     </h2>
 
                     <p className="font-montserrat text-neutral-400 text-lg lg:text-xl leading-relaxed max-w-2xl">
-                        I'm Maqsoud, a Paris-based AI Developer and UI/UX enthusiast geared about creating visually compelling identities and seamless digital experiences. With a strategic approach and a keen eye for detail, I help businesses stand out and connect with their audience. Let's create something remarkable together.
+                        I'm Maqsoud, a Benin-based AI Developer and UI/UX enthusiast geared about creating visually compelling identities and seamless digital experiences. With a strategic approach and a keen eye for detail, I help businesses stand out and connect with their audience. Let's create something remarkable together.
                     </p>
 
                     <Link

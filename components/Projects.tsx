@@ -7,48 +7,134 @@ import { useState } from "react";
 export default function Projects() {
     const [activeTab, setActiveTab] = useState<"client" | "personal">("client");
 
-    const projects = [
+    const clientProjects = [
         {
             id: 1,
-            title: "SaaS Analytics Dashboard",
-            description:
-                "A comprehensive analytics dashboard for SaaS businesses featuring real-time data visualization, user management, and subscription tracking.",
-            image: "/web-developement.png", // Placeholder image
-            link: "#",
+            title: "Iris Voyance",
+            description: "A website for Iris Voyance, a psychic and astrological voyance.",
+            image: "/projets/client-1.png",
+            link: "https://iris-voyance.vercel.app/",
             category: "client",
         },
         {
             id: 2,
-            title: "E-commerce Platform",
-            description:
-                "A modern, high-performance e-commerce solution with headless CMS integration, secure payments, and an optimized checkout flow.",
-            image: "/web-developement.png", // Placeholder image
-            link: "#",
+            title: "Kotenou",
+            description: "A professional platform for Kotenou, a cleaning company.",
+            image: "/projets/client-2.png",
+            link: "http://kotenou.vercel.app/",
             category: "client",
         },
         {
             id: 3,
-            title: "AI Chat Assistant",
-            description:
-                "A sophisticated RAG methods chatbot capable of context-aware conversations and document analysis. Built with Next.js, OpenAI API, and Pinecone vector database.",
-            image: "/web-developement.png", // Placeholder image
-            link: "#",
-            category: "personal",
+            title: "Pierre Yves Chicot",
+            description: "Lawyer website for Pierre Yves Chicot.",
+            image: "/projets/client-3.png",
+            link: "https://pierreyveschicot.com/",
+            category: "client",
         },
         {
             id: 4,
-            title: "Portfolio V1",
-            description:
-                "An immersive creative developer portfolio showcasing interactive 3D elements, smooth page transitions, and a unique visual identity.",
-            image: "/web-developement.png", // Placeholder image
-            link: "#",
+            title: "Flow GP",
+            description: "Corporate website for Flow GP, a digital services company.",
+            image: "/projets/client-4.png",
+            link: "https://flowgp.fr/",
+            category: "client",
+        },
+        {
+            id: 5,
+            title: "Genesis Lake",
+            description: "Interactive website for Genesis, highlighting immobiliare services.",
+            image: "/projets/client-5.png",
+            link: "https://genesis-website-lake.vercel.app/",
+            category: "client",
+        },
+        {
+            id: 6,
+            title: "DOM Enfance Famille",
+            description: "Platform dedicated to childhood and family services, focusing on accessibility and clear information.",
+            image: "/projets/client-6.png",
+            link: "https://dom-enfance-famille.vercel.app/",
+            category: "client",
+        },
+    ];
+
+    const personalProjects = [
+        {
+            id: 7,
+            title: "SpotMeUp",
+            description: "A SaaS platform for portfolio creation.",
+            image: "/projets/perso-1.png",
+            link: "https://spotmeup.vercel.app/",
+            category: "personal",
+        },
+        {
+            id: 8,
+            title: "Finset",
+            description: "Financial management tool allowing users to track expenses and manage budgets effectively.",
+            image: "/projets/perso-2.png",
+            link: "https://finset-phi.vercel.app/",
+            category: "personal",
+        },
+        {
+            id: 9,
+            title: "NegoceIA",
+            description: "AI-powered platform for negotiating and closing deals.",
+            image: "/projets/perso-3.png",
+            link: "https://negoce-ia.vercel.app/",
+            category: "personal",
+        },
+        {
+            id: 10,
+            title: "Alcentric",
+            description: "The ultimate tool to guide your navigator using your voice.",
+            image: "/projets/perso-4.png",
+            link: "https://alcentric.vercel.app/",
+            category: "personal",
+        },
+        {
+            id: 11,
+            title: "Bunkle",
+            description: "A SaaS platform for storing and sharing .env files.",
+            image: "/projets/perso-5.png",
+            link: "https://www.bunkle.online/",
+            category: "personal",
+        },
+        {
+            id: 12,
+            title: "Andunu",
+            description: "A platform for food planning and ordering.",
+            image: "/projets/perso-6.png",
+            link: "https://andunu.com",
+            category: "personal",
+        },
+        {
+            id: 13,
+            title: "Dress In An Art",
+            description: "A platform for ordering custom-made and bespoke clothing.",
+            image: "/projets/perso-7.png",
+            link: "https://dressinanart.vercel.app/",
+            category: "personal",
+        },
+        {
+            id: 14,
+            title: "Miwa Software",
+            description: "A SaaS platform for an entry/exit management system.",
+            image: "/projets/perso-8.png",
+            link: "https://miwa.software",
             category: "personal",
         },
     ];
 
-    const filteredProjects = projects.filter(
-        (project) => project.category === activeTab
-    );
+    const [visibleCount, setVisibleCount] = useState(4);
+
+    // Reset visible count when switching tabs
+    const handleTabChange = (tab: "client" | "personal") => {
+        setActiveTab(tab);
+        setVisibleCount(4);
+    };
+
+    const allDisplayedProjects = activeTab === "client" ? clientProjects : personalProjects;
+    const displayedProjects = allDisplayedProjects.slice(0, visibleCount);
 
     return (
         <section id="projects" className="w-full bg-black py-16 md:py-24 px-6 relative overflow-hidden">
@@ -66,7 +152,7 @@ export default function Projects() {
                     {/* Tabs */}
                     <div className="flex items-center gap-2 bg-neutral-900/50 p-1 rounded-full w-fit border border-neutral-800">
                         <button
-                            onClick={() => setActiveTab("client")}
+                            onClick={() => handleTabChange("client")}
                             className={`px-6 py-2 rounded-full font-hanken font-medium transition-all duration-300 ${activeTab === "client"
                                 ? "bg-neutral-800 text-white shadow-sm"
                                 : "text-neutral-400 hover:text-white"
@@ -75,7 +161,7 @@ export default function Projects() {
                             Client Projects
                         </button>
                         <button
-                            onClick={() => setActiveTab("personal")}
+                            onClick={() => handleTabChange("personal")}
                             className={`px-6 py-2 rounded-full font-hanken font-medium transition-all duration-300 ${activeTab === "personal"
                                 ? "bg-neutral-800 text-white shadow-sm"
                                 : "text-neutral-400 hover:text-white"
@@ -88,7 +174,7 @@ export default function Projects() {
 
                 {/* Projects Grid */}
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 min-h-[400px]">
-                    {filteredProjects.map((project) => (
+                    {displayedProjects.map((project) => (
                         <div
                             key={project.id}
                             className="group bg-neutral-900/30 border border-neutral-800 rounded-3xl overflow-hidden hover:border-neutral-700 transition-all duration-300 animate-in fade-in slide-in-from-bottom-4 duration-500"
@@ -100,6 +186,18 @@ export default function Projects() {
                                     fill
                                     className="object-cover group-hover:scale-105 transition-transform duration-700"
                                 />
+                                {/* Image Overlay */}
+                                <div className="absolute inset-0 bg-neutral-900/10 z-10"></div>
+
+                                {/* Category Badge */}
+                                <div className="absolute top-4 left-4 z-20">
+                                    <span className={`px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider backdrop-blur-md border ${project.category === 'client'
+                                        ? 'bg-orange-500/20 border-orange-500/50 text-orange-200'
+                                        : 'bg-blue-500/20 border-blue-500/50 text-blue-200'
+                                        }`}>
+                                        {project.category}
+                                    </span>
+                                </div>
 
                                 {/* Overlay Button */}
                                 <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
@@ -130,14 +228,17 @@ export default function Projects() {
                 </div>
 
                 {/* View All Projects Button */}
-                <div className="mt-16 flex justify-center">
-                    <Link
-                        href="#"
-                        className="inline-flex items-center gap-2 border border-neutral-700 text-white font-montserrat font-medium px-8 py-3 rounded-full hover:bg-neutral-800 transition-all hover:scale-105"
-                    >
-                        View All Projects
-                    </Link>
-                </div>
+                {/* View All Projects / Show Less Button */}
+                {allDisplayedProjects.length > 4 && (
+                    <div className="mt-16 flex justify-center">
+                        <button
+                            onClick={() => setVisibleCount(prev => prev === 4 ? allDisplayedProjects.length : 4)}
+                            className="inline-flex items-center gap-2 border border-neutral-700 text-white font-montserrat font-medium px-8 py-3 rounded-full hover:bg-neutral-800 transition-all hover:scale-105"
+                        >
+                            {visibleCount === 4 ? "View All Projects" : "Show Less"}
+                        </button>
+                    </div>
+                )}
             </div>
 
             {/* Background Gradient */}

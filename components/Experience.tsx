@@ -2,30 +2,57 @@ export default function Experience() {
     const experiences = [
         {
             id: 1,
-            period: "2024 - Present",
-            role: "Senior AI Engineer",
-            company: "Tech Innovations Inc.",
+            period: "Nov 2024 - Present",
+            role: "Maintainer & Lead Developer",
+            company: "Sèmè City Open Park (SCOP)",
             description:
-                "Leading the development of generative AI solutions, optimizing LLM inference pipelines, and architecting scalable RAG systems for enterprise clients.",
-            skills: ["Python", "PyTorch", "LangChain", "AWS", "FastAPI"],
+                "Evolutive and corrective maintenance of an entry/exit management system following a hackathon win. Monitoring interoperability, deploying fixes, functional improvements, and needs reassessment.",
+            skills: ["System Maintenance", "Interopérabilité", "Full Stack", "System Design"],
         },
         {
             id: 2,
-            period: "2022 - 2024",
-            role: "Full Stack Developer",
-            company: "Creative Studio",
+            period: "May 2025",
+            role: "Founder & Lead Engineer",
+            company: "Negoce AI (SaaS)",
             description:
-                "Built and maintained high-performance web applications using Next.js and React. Collaborated with design teams to implement pixel-perfect UIs and complex animations.",
-            skills: ["Next.js", "TypeScript", "Tailwind CSS", "Supabase", "Framer Motion"],
+                "Designed an AI tool optimized for negotiation. Built frontend with Next.js and Supabase, dynamic content management, and software architecture.",
+            skills: ["Next.js", "Supabase", "AI Agents", "Architecture", "SaaS"],
         },
         {
             id: 3,
-            period: "2020 - 2022",
-            role: "Frontend Developer",
-            company: "Digital Agency",
+            period: "Mar 2025 - Present",
+            role: "Founder & Full Stack Developer",
+            company: "SpotMeUp (SaaS)",
             description:
-                "Developed responsive websites and e-commerce platforms. Improved site performance and SEO scores, resulting in increased user engagement.",
-            skills: ["React", "JavaScript", "SCSS", "Shopify", "Vercel"],
+                "Conception of a portfolio creation platform for professionals. Frontend with Next.js, Backend, and dynamic content management. Software architecture, automation, and UI/UX via Figma.",
+            skills: ["Next.js", "Backend Design", "Figma", "Automation", "SaaS"],
+        },
+        {
+            id: 4,
+            period: "Nov 2024 - Mar 2025",
+            role: "Full Stack Developer",
+            company: "Trinity (E-commerce)",
+            description:
+                "Complete project planning on Azure DevOps: backlog, hourly loads, costs. Stack: NestJS, Next.js, React Native, TailwindCSS. UI Design via Figma. REST Architecture.",
+            skills: ["Azure DevOps", "NestJS", "Next.js", "React Native", "TailwindCSS", "Figma"],
+        },
+        {
+            id: 5,
+            period: "Oct 2024",
+            role: "Backend Developer",
+            company: "Time Manager",
+            description:
+                "Time management application built with Elixir, VueJS, and Docker. UI Design via Figma.",
+            skills: ["Elixir", "Vue.js", "Docker", "Figma"],
+        },
+        {
+            id: 6,
+            period: "2024",
+            role: "Software Architect",
+            company: "Myah IT Company (Project IWE)",
+            description:
+                "Conception of UML diagrams and modeling of the structure for a platform managing professors, subjects, and university courses.",
+            skills: ["UML", "System Modeling", "Architecture", "Education Tech"],
         },
     ];
 

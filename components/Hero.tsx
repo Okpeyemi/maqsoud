@@ -31,12 +31,14 @@ export default function Hero() {
     return (
         <div className="min-h-screen bg-black text-white font-montserrat relative overflow-hidden flex flex-col">
             {/* Navbar */}
-            <nav className="flex items-center justify-between px-8 py-6 container z-50 mx-auto relative">
-                <div className="flex items-center gap-3 bg-neutral-900/50 px-6 py-4 rounded-full border border-neutral-800 backdrop-blur-md">
-                    <div className="w-6 h-6 rounded-full bg-gradient-to-br from-orange-400 to-red-600 flex items-center justify-center text-[10px] font-bold">
-                        M
+            <nav className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-8 py-6 container mx-auto">
+                <div className="flex w-full items-center justify-between gap-3 bg-neutral-900/50 px-6 py-4 rounded-full border border-neutral-800 backdrop-blur-md">
+                    <div className="flex items-center gap-3">
+                        <div className="w-6 h-6 rounded-full bg-gradient-to-br from-orange-400 to-red-600 flex items-center justify-center text-[10px] font-bold">
+                            M
+                        </div>
+                        <span className="font-hanken font-medium">Maqsoud</span>
                     </div>
-                    <span className="font-hanken font-medium">Maqsoud</span>
                     <button
                         onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
                         className="ml-4 p-1 hover:bg-neutral-800 rounded-full transition-colors relative z-50"
@@ -107,7 +109,7 @@ export default function Hero() {
 
                             <h1 className="font-hanken text-5xl lg:text-7xl font-bold leading-[1.1]">
                                 AI Developer <br />
-                                <span className="text-neutral-400">based in Paris</span>
+                                <span className="text-neutral-400">based in Benin</span>
                             </h1>
 
                             <Link
@@ -154,7 +156,7 @@ export default function Hero() {
 
                 {/* BACKGROUND IMAGE (Z-10) */}
                 {/* "qui sera centré en fond" */}
-                <div className="absolute inset-x-0 top-0 h-[75vh] lg:h-[80vh] z-10 flex items-end justify-center pointer-events-none">
+                <div className="absolute inset-x-0 top-0 lg:top-20 h-[75vh] lg:h-[80vh] z-10 flex items-end justify-center pointer-events-none">
                     {/* Background Blur */}
                     <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-neutral-800/60 rounded-full blur-3xl z-0 mix-blend-screen"></div>
 
