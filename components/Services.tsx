@@ -26,7 +26,7 @@ export default function Services() {
     ];
 
     return (
-        <section className="w-full bg-black py-24 px-6">
+        <section id="services" className="w-full bg-black py-24 px-6 relative overflow-hidden">
             <div className="max-w-[1400px] mx-auto">
                 {/* Header content */}
                 <div className="flex flex-col md:flex-row justify-between items-start gap-12 mb-20">
@@ -74,6 +74,9 @@ export default function Services() {
                     ))}
                 </div>
             </div>
+
+            {/* Background Gradient */}
+            <div className="absolute top-1/2 left-0 -translate-y-1/2 w-[500px] h-[500px] bg-orange-900/10 rounded-full blur-[120px] pointer-events-none"></div>
         </section>
     );
 }

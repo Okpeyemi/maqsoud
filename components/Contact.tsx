@@ -2,7 +2,7 @@ import Link from "next/link";
 
 export default function Contact() {
     return (
-        <section className="w-full bg-black py-24 px-6 border-t border-neutral-900">
+        <section id="contact" className="w-full bg-black py-24 px-6 border-t border-neutral-900 relative overflow-hidden">
             <div className="max-w-[1400px] mx-auto text-center">
                 <h2 className="font-hanken font-bold text-4xl lg:text-6xl text-white mb-6">
                     Let's Connect
@@ -100,6 +100,8 @@ export default function Contact() {
                     </Link>
                 </div>
             </div>
+            {/* Background Gradient */}
+            <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[600px] h-[400px] bg-gradient-to-t from-red-900/20 to-transparent blur-[120px] pointer-events-none"></div>
         </section>
     );
 }

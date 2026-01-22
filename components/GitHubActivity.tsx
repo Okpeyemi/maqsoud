@@ -82,7 +82,7 @@ export default function GitHubActivity() {
     };
 
     return (
-        <section className="w-full bg-black py-24 px-6 border-t border-neutral-900">
+        <section id="github-activity" className="w-full bg-black py-24 px-6 border-t border-neutral-900 relative overflow-hidden">
             <div className="max-w-[1400px] mx-auto">
                 <div className="flex flex-col md:flex-row justify-between items-end mb-12 gap-6">
                     <div>
@@ -135,8 +135,8 @@ export default function GitHubActivity() {
                             <button
                                 onClick={() => setSelectedYear("last")}
                                 className={`px-4 py-1.5 rounded-md text-sm font-medium transition-colors ${selectedYear === "last"
-                                        ? "bg-neutral-800 text-white shadow-sm"
-                                        : "text-neutral-400 hover:text-white"
+                                    ? "bg-neutral-800 text-white shadow-sm"
+                                    : "text-neutral-400 hover:text-white"
                                     }`}
                             >
                                 Global
@@ -146,8 +146,8 @@ export default function GitHubActivity() {
                                     key={year}
                                     onClick={() => setSelectedYear(year)}
                                     className={`px-4 py-1.5 rounded-md text-sm font-medium transition-colors ${selectedYear === year
-                                            ? "bg-neutral-800 text-white shadow-sm"
-                                            : "text-neutral-400 hover:text-white"
+                                        ? "bg-neutral-800 text-white shadow-sm"
+                                        : "text-neutral-400 hover:text-white"
                                         }`}
                                 >
                                     {year}
@@ -213,6 +213,8 @@ export default function GitHubActivity() {
                     ))}
                 </div>
             </div>
+            {/* Background Gradient */}
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-orange-900/5 rounded-full blur-[120px] pointer-events-none"></div>
         </section>
     );
 }

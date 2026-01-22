@@ -51,7 +51,7 @@ export default function Projects() {
     );
 
     return (
-        <section className="w-full bg-black py-24 px-6">
+        <section id="projects" className="w-full bg-black py-24 px-6 relative overflow-hidden">
             <div className="max-w-[1400px] mx-auto">
                 {/* Header */}
                 <div className="mb-16">
@@ -68,8 +68,8 @@ export default function Projects() {
                         <button
                             onClick={() => setActiveTab("client")}
                             className={`px-6 py-2 rounded-full font-hanken font-medium transition-all duration-300 ${activeTab === "client"
-                                    ? "bg-neutral-800 text-white shadow-sm"
-                                    : "text-neutral-400 hover:text-white"
+                                ? "bg-neutral-800 text-white shadow-sm"
+                                : "text-neutral-400 hover:text-white"
                                 }`}
                         >
                             Client Projects
@@ -77,8 +77,8 @@ export default function Projects() {
                         <button
                             onClick={() => setActiveTab("personal")}
                             className={`px-6 py-2 rounded-full font-hanken font-medium transition-all duration-300 ${activeTab === "personal"
-                                    ? "bg-neutral-800 text-white shadow-sm"
-                                    : "text-neutral-400 hover:text-white"
+                                ? "bg-neutral-800 text-white shadow-sm"
+                                : "text-neutral-400 hover:text-white"
                                 }`}
                         >
                             Personal Projects
@@ -133,12 +133,15 @@ export default function Projects() {
                 <div className="mt-16 flex justify-center">
                     <Link
                         href="#"
-                        className="inline-flex items-center gap-2 border border-neutral-700 text-white font-montserrat font-medium px-8 py-3 rounded-full hover:bg-neutral-800 transition-colors"
+                        className="inline-flex items-center gap-2 border border-neutral-700 text-white font-montserrat font-medium px-8 py-3 rounded-full hover:bg-neutral-800 transition-all hover:scale-105"
                     >
                         View All Projects
                     </Link>
                 </div>
             </div>
+
+            {/* Background Gradient */}
+            <div className="absolute top-1/2 right-0 -translate-y-1/2 w-[500px] h-[500px] bg-red-900/10 rounded-full blur-[120px] pointer-events-none"></div>
         </section>
     );
 }

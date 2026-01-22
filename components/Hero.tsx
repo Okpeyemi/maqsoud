@@ -53,8 +53,8 @@ export default function Hero() {
                             </h1>
 
                             <Link
-                                href="#"
-                                className="inline-flex items-center gap-3 bg-gradient-to-r from-orange-500 to-red-600 px-8 py-4 rounded-full font-bold text-lg hover:opacity-90 transition-opacity"
+                                href="#projects"
+                                className="inline-flex items-center gap-3 bg-gradient-to-r from-orange-500 to-red-600 px-8 py-4 rounded-full font-bold text-lg hover:opacity-90 transition-all hover:scale-105"
                             >
                                 <div className="w-8 h-8 text-orange-600 bg-white rounded-full flex items-center justify-center">
                                     <svg
@@ -72,7 +72,7 @@ export default function Hero() {
                                         <path d="m12 5 7 7-7 7"></path>
                                     </svg>
                                 </div>
-                                See my work
+                                See my works
                             </Link>
                         </div>
 

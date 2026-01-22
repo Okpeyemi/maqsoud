@@ -30,7 +30,7 @@ export default function Blog() {
     ];
 
     return (
-        <section className="w-full bg-black py-24 px-6 border-t border-neutral-900">
+        <section id="blog" className="w-full bg-black py-24 px-6 border-t border-neutral-900 relative overflow-hidden">
             <div className="max-w-[1400px] mx-auto">
                 {/* Header */}
                 <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
@@ -99,6 +99,9 @@ export default function Blog() {
                     ))}
                 </div>
             </div>
+
+            {/* Background Gradient */}
+            <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-red-900/10 rounded-full blur-[100px] pointer-events-none opacity-50"></div>
         </section>
     );
 }
