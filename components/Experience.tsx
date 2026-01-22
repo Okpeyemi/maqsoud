@@ -7,7 +7,7 @@ export default function Experience() {
             company: "Sèmè City Open Park (SCOP)",
             description:
                 "Evolutive and corrective maintenance of an entry/exit management system following a hackathon win. Monitoring interoperability, deploying fixes, functional improvements, and needs reassessment.",
-            skills: ["System Maintenance", "Interopérabilité", "Full Stack", "System Design"],
+            skills: ["System Maintenance", "Interoperability", "Full Stack", "System Design"],
         },
         {
             id: 2,
