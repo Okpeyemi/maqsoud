@@ -196,7 +196,7 @@ export default function GitHubActivity() {
                                         </svg>
                                     </div>
                                     <div className="flex-1 min-w-0">
-                                        <p className="text-white font-hanken font-medium text-lg group-hover:text-orange-500 transition-colors truncate">
+                                        <p className="text-white font-hanken font-medium text-lg group-hover:text-orange-500 transition-colors">
                                             {commit.commit.message}
                                         </p>
                                         <div className="flex items-center gap-2 text-sm text-neutral-500 font-mono mt-1">
@@ -258,7 +258,9 @@ export default function GitHubActivity() {
                                     className="p-3 rounded-full bg-neutral-900 border border-neutral-800 text-white hover:bg-neutral-800 hover:text-orange-500 transition-all font-bold"
                                     aria-label="Previous commit"
                                 >
-                                    ←
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                        <path d="m15 18-6-6 6-6" />
+                                    </svg>
                                 </button>
                                 <span className="text-sm font-mono text-neutral-500">
                                     {currentCommitIndex + 1} / {commits.length}
@@ -268,7 +270,9 @@ export default function GitHubActivity() {
                                     className="p-3 rounded-full bg-neutral-900 border border-neutral-800 text-white hover:bg-neutral-800 hover:text-orange-500 transition-all font-bold"
                                     aria-label="Next commit"
                                 >
-                                    →
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                        <path d="m9 18 6-6-6-6" />
+                                    </svg>
                                 </button>
                             </div>
                         </div>
