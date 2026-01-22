@@ -18,7 +18,7 @@ export default function Home() {
       <Services />
       <Projects />
       <Experience />
-      <Blog />
+      {/* <Blog /> */}
       <GitHubActivity />
       <Contact />
       <Footer />
