@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { FadeIn, StaggerContainer } from "./Animations";
 
 export default function Blog() {
     const posts = [
@@ -35,69 +36,76 @@ export default function Blog() {
                 {/* Header */}
                 <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
                     <div>
-                        <h2 className="font-hanken font-bold text-4xl lg:text-6xl text-white mb-4">
-                            Latest Insights
-                        </h2>
-                        <p className="font-montserrat text-neutral-400 text-lg max-w-xl">
-                            Thoughts on technology, design, and the future of digital product development.
-                        </p>
+                        <FadeIn direction="up">
+                            <h2 className="font-hanken font-bold text-4xl lg:text-6xl text-white mb-4">
+                                Latest Insights
+                            </h2>
+                        </FadeIn>
+                        <FadeIn delay={0.2} direction="up">
+                            <p className="font-montserrat text-neutral-400 text-lg max-w-xl">
+                                Thoughts on technology, design, and the future of digital product development.
+                            </p>
+                        </FadeIn>
                     </div>
-                    <Link
-                        href="#"
-                        className="text-white hover:text-orange-500 font-hanken font-bold text-lg transition-colors flex items-center gap-2 group"
-                    >
-                        Read all articles
-                        <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            width="20"
-                            height="20"
-                            viewBox="0 0 24 24"
-                            fill="none"
-                            stroke="currentColor"
-                            strokeWidth="2"
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            className="group-hover:translate-x-1 transition-transform"
+                    <FadeIn delay={0.4} direction="left">
+                        <Link
+                            href="#"
+                            className="text-white hover:text-orange-500 font-hanken font-bold text-lg transition-colors flex items-center gap-2 group"
                         >
-                            <line x1="5" y1="12" x2="19" y2="12"></line>
-                            <polyline points="12 5 19 12 12 19"></polyline>
-                        </svg>
-                    </Link>
+                            Read all articles
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="20"
+                                height="20"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                strokeWidth="2"
+                                strokeLinecap="round"
+                                strokeLinejoin="round"
+                                className="group-hover:translate-x-1 transition-transform"
+                            >
+                                <line x1="5" y1="12" x2="19" y2="12"></line>
+                                <polyline points="12 5 19 12 12 19"></polyline>
+                            </svg>
+                        </Link>
+                    </FadeIn>
                 </div>
 
                 {/* Blog Grid */}
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                     {posts.map((post) => (
-                        <Link
-                            href={post.link}
+                        <FadeIn
                             key={post.id}
-                            className="group flex flex-col gap-6"
+                            direction="up"
                         >
-                            <div className="relative w-full aspect-[16/10] overflow-hidden rounded-2xl bg-neutral-900/50 border border-neutral-800 group-hover:border-neutral-700 transition-colors">
-                                <Image
-                                    src={post.image}
-                                    alt={post.title}
-                                    fill
-                                    className="object-cover group-hover:scale-105 transition-transform duration-500"
-                                />
-                            </div>
-
-                            <div className="flex flex-col gap-3">
-                                <div className="flex items-center gap-4 text-sm font-medium">
-                                    <span className="text-orange-500 bg-orange-500/10 px-3 py-1 rounded-full">
-                                        {post.category}
-                                    </span>
-                                    <span className="text-neutral-500 font-montserrat">
-                                        {post.date}
-                                    </span>
+                            <Link href={post.link} className="group flex flex-col gap-6">
+                                <div className="relative w-full aspect-[16/10] overflow-hidden rounded-2xl bg-neutral-900/50 border border-neutral-800 group-hover:border-neutral-700 transition-colors">
+                                    <Image
+                                        src={post.image}
+                                        alt={post.title}
+                                        fill
+                                        className="object-cover group-hover:scale-105 transition-transform duration-500"
+                                    />
                                 </div>
-                                <h3 className="font-hanken font-bold text-2xl text-white leading-tight group-hover:text-orange-500 transition-colors">
-                                    {post.title}
-                                </h3>
-                            </div>
-                        </Link>
+
+                                <div className="flex flex-col gap-3">
+                                    <div className="flex items-center gap-4 text-sm font-medium">
+                                        <span className="text-orange-500 bg-orange-500/10 px-3 py-1 rounded-full">
+                                            {post.category}
+                                        </span>
+                                        <span className="text-neutral-500 font-montserrat">
+                                            {post.date}
+                                        </span>
+                                    </div>
+                                    <h3 className="font-hanken font-bold text-2xl text-white leading-tight group-hover:text-orange-500 transition-colors">
+                                        {post.title}
+                                    </h3>
+                                </div>
+                            </Link>
+                        </FadeIn>
                     ))}
-                </div>
+                </StaggerContainer>
             </div>
 
             {/* Background Gradient */}

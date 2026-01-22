@@ -3,6 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useState, useEffect } from "react";
+import { FadeIn } from "./Animations";
 
 export default function Hero() {
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -100,55 +101,65 @@ export default function Hero() {
 
                         {/* Left Content */}
                         <div className="flex flex-col items-start gap-8 mb-10 lg:mb-0">
-                            <div className="inline-flex items-center gap-2 bg-neutral-900/80 px-4 py-2 rounded-full border border-neutral-800 w-fit backdrop-blur-sm">
-                                <span className="w-2 h-2 rounded-full bg-red-500 animate-pulse"></span>
-                                <span className="text-sm text-neutral-300 whitespace-nowrap">Available for Work</span>
-                            </div>
-
-                            <h1 className="font-hanken text-5xl lg:text-7xl font-bold leading-[1.1]">
-                                AI Developer <br />
-                                <span className="text-neutral-400">based in Benin</span>
-                            </h1>
-
-                            <Link
-                                href="#projects"
-                                className="inline-flex items-center gap-3 bg-gradient-to-r from-orange-500 to-red-600 px-8 py-4 rounded-full font-bold text-lg hover:opacity-90 transition-all hover:scale-105"
-                            >
-                                <div className="w-8 h-8 text-orange-600 bg-white rounded-full flex items-center justify-center">
-                                    <svg
-                                        xmlns="http://www.w3.org/2000/svg"
-                                        width="16"
-                                        height="16"
-                                        viewBox="0 0 24 24"
-                                        fill="none"
-                                        stroke="currentColor"
-                                        strokeWidth="3"
-                                        strokeLinecap="round"
-                                        strokeLinejoin="round"
-                                    >
-                                        <path d="M5 12h14"></path>
-                                        <path d="m12 5 7 7-7 7"></path>
-                                    </svg>
+                            <FadeIn delay={0.2} direction="right">
+                                <div className="inline-flex items-center gap-2 bg-neutral-900/80 px-4 py-2 rounded-full border border-neutral-800 w-fit backdrop-blur-sm">
+                                    <span className="w-2 h-2 rounded-full bg-red-500 animate-pulse"></span>
+                                    <span className="text-sm text-neutral-300 whitespace-nowrap">Available for Work</span>
                                 </div>
-                                See my works
-                            </Link>
+                            </FadeIn>
+
+                            <FadeIn delay={0.4} direction="up">
+                                <h1 className="font-hanken text-5xl lg:text-7xl font-bold leading-[1.1]">
+                                    AI Developer <br />
+                                    <span className="text-neutral-400">based in Benin</span>
+                                </h1>
+                            </FadeIn>
+
+                            <FadeIn delay={0.6} direction="up">
+                                <Link
+                                    href="#projects"
+                                    className="inline-flex items-center gap-3 bg-gradient-to-r from-orange-500 to-red-600 px-8 py-4 rounded-full font-bold text-lg hover:opacity-90 transition-all hover:scale-105"
+                                >
+                                    <div className="w-8 h-8 text-orange-600 bg-white rounded-full flex items-center justify-center">
+                                        <svg
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            width="16"
+                                            height="16"
+                                            viewBox="0 0 24 24"
+                                            fill="none"
+                                            stroke="currentColor"
+                                            strokeWidth="3"
+                                            strokeLinecap="round"
+                                            strokeLinejoin="round"
+                                        >
+                                            <path d="M5 12h14"></path>
+                                            <path d="m12 5 7 7-7 7"></path>
+                                        </svg>
+                                    </div>
+                                    See my works
+                                </Link>
+                            </FadeIn>
                         </div>
 
                         {/* Right Content */}
                         <div className="flex flex-col justify-end text-left lg:text-right max-w-sm">
-                            <p className="text-neutral-400 text-lg lg:text-xl leading-relaxed">
-                                Hi, I'm Maqsoud. <br />
-                                An AI developer passionate about creating seamless digital experiences that connect and inspire.
-                            </p>
+                            <FadeIn delay={0.8} direction="left">
+                                <p className="text-neutral-400 text-lg lg:text-xl leading-relaxed">
+                                    Hi, I'm Maqsoud. <br />
+                                    An AI developer passionate about creating seamless digital experiences that connect and inspire.
+                                </p>
+                            </FadeIn>
                         </div>
                     </div>
 
                     {/* Bottom Section: Maqsoud Typography */}
                     {/* "En dessous" */}
                     <div className="max-lg:hidden container flex justify-center mt-auto">
-                        <span className="font-hanken font-bold text-[18vw] leading-[0.7] text-neutral-100 opacity-80 tracking-normal mix-blend-overlay translate-y-[5%]">
-                            Maqsoud
-                        </span>
+                        <FadeIn delay={1.0} direction="up" className="translate-y-[5%]">
+                            <span className="font-hanken font-bold text-[18vw] leading-[0.7] text-neutral-100 opacity-80 tracking-normal mix-blend-overlay">
+                                Maqsoud
+                            </span>
+                        </FadeIn>
                     </div>
                 </div>
 

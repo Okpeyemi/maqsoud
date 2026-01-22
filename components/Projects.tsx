@@ -3,6 +3,8 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
+import { StaggerContainer, cardVariants, FadeIn } from "./Animations";
+import { motion } from "framer-motion";
 
 export default function Projects() {
     const [activeTab, setActiveTab] = useState<"client" | "personal">("client");
@@ -141,43 +143,50 @@ export default function Projects() {
             <div className="max-w-[1400px] mx-auto">
                 {/* Header */}
                 <div className="mb-16">
-                    <h2 className="font-hanken font-bold text-4xl lg:text-6xl text-white mb-6">
-                        Selected Projects
-                    </h2>
-                    <p className="font-montserrat text-neutral-400 text-lg max-w-2xl mb-8">
-                        A small gallery of recent projects chosen by me. I've done them all
-                        together with amazing people from companies around the globe.
-                    </p>
+                    <FadeIn direction="up">
+                        <h2 className="font-hanken font-bold text-4xl lg:text-6xl text-white mb-6">
+                            Selected Projects
+                        </h2>
+                    </FadeIn>
+                    <FadeIn delay={0.2} direction="up">
+                        <p className="font-montserrat text-neutral-400 text-lg max-w-2xl mb-8">
+                            A small gallery of recent projects chosen by me. I've done them all
+                            together with amazing people from companies around the globe.
+                        </p>
+                    </FadeIn>
 
                     {/* Tabs */}
-                    <div className="flex items-center gap-2 bg-neutral-900/50 p-1 rounded-full w-fit border border-neutral-800">
-                        <button
-                            onClick={() => handleTabChange("client")}
-                            className={`px-6 py-2 rounded-full font-hanken font-medium transition-all duration-300 ${activeTab === "client"
-                                ? "bg-neutral-800 text-white shadow-sm"
-                                : "text-neutral-400 hover:text-white"
-                                }`}
-                        >
-                            Client Projects
-                        </button>
-                        <button
-                            onClick={() => handleTabChange("personal")}
-                            className={`px-6 py-2 rounded-full font-hanken font-medium transition-all duration-300 ${activeTab === "personal"
-                                ? "bg-neutral-800 text-white shadow-sm"
-                                : "text-neutral-400 hover:text-white"
-                                }`}
-                        >
-                            Personal Projects
-                        </button>
-                    </div>
+                    <FadeIn delay={0.3} direction="up">
+                        <div className="flex items-center gap-2 bg-neutral-900/50 p-1 rounded-full w-fit border border-neutral-800">
+                            <button
+                                onClick={() => handleTabChange("client")}
+                                className={`px-6 py-2 rounded-full font-hanken font-medium transition-all duration-300 ${activeTab === "client"
+                                    ? "bg-neutral-800 text-white shadow-sm"
+                                    : "text-neutral-400 hover:text-white"
+                                    }`}
+                            >
+                                Client Projects
+                            </button>
+                            <button
+                                onClick={() => handleTabChange("personal")}
+                                className={`px-6 py-2 rounded-full font-hanken font-medium transition-all duration-300 ${activeTab === "personal"
+                                    ? "bg-neutral-800 text-white shadow-sm"
+                                    : "text-neutral-400 hover:text-white"
+                                    }`}
+                            >
+                                Personal Projects
+                            </button>
+                        </div>
+                    </FadeIn>
                 </div>
 
                 {/* Projects Grid */}
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 min-h-[400px]">
+                <StaggerContainer className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 min-h-[400px]">
                     {displayedProjects.map((project) => (
-                        <div
+                        <motion.div
                             key={project.id}
-                            className="group bg-neutral-900/30 border border-neutral-800 rounded-3xl overflow-hidden hover:border-neutral-700 transition-all duration-300 animate-in fade-in slide-in-from-bottom-4 duration-500"
+                            variants={cardVariants}
+                            className="group bg-neutral-900/30 border border-neutral-800 rounded-3xl overflow-hidden hover:border-neutral-700 transition-all duration-300"
                         >
                             <div className="relative w-full aspect-[4/3] overflow-hidden">
                                 <Image
@@ -200,7 +209,7 @@ export default function Projects() {
                                 </div>
 
                                 {/* Overlay Button */}
-                                <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                                <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center z-30">
                                     <Link
                                         href={project.link}
                                         className="bg-white text-black font-hanken font-bold px-8 py-3 rounded-full transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300 hover:scale-105"
@@ -223,21 +232,22 @@ export default function Projects() {
                                     </span>
                                 </div>
                             </div>
-                        </div>
+                        </motion.div>
                     ))}
-                </div>
+                </StaggerContainer>
 
                 {/* View All Projects Button */}
-                {/* View All Projects / Show Less Button */}
                 {allDisplayedProjects.length > 4 && (
-                    <div className="mt-16 flex justify-center">
-                        <button
-                            onClick={() => setVisibleCount(prev => prev === 4 ? allDisplayedProjects.length : 4)}
-                            className="inline-flex items-center gap-2 border border-neutral-700 text-white font-montserrat font-medium px-8 py-3 rounded-full hover:bg-neutral-800 transition-all hover:scale-105"
-                        >
-                            {visibleCount === 4 ? "View All Projects" : "Show Less"}
-                        </button>
-                    </div>
+                    <FadeIn delay={0.2} direction="up">
+                        <div className="mt-16 flex justify-center">
+                            <button
+                                onClick={() => setVisibleCount(prev => prev === 4 ? allDisplayedProjects.length : 4)}
+                                className="inline-flex items-center gap-2 border border-neutral-700 text-white font-montserrat font-medium px-8 py-3 rounded-full hover:bg-neutral-800 transition-all hover:scale-105"
+                            >
+                                {visibleCount === 4 ? "View All Projects" : "Show Less"}
+                            </button>
+                        </div>
+                    </FadeIn>
                 )}
             </div>
 

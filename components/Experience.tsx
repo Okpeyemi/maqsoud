@@ -1,3 +1,5 @@
+import { FadeIn, StaggerContainer } from "./Animations";
+
 export default function Experience() {
     const experiences = [
         {
@@ -63,19 +65,23 @@ export default function Experience() {
                     {/* Header Column */}
                     <div className="md:w-1/3 flex-shrink-0">
                         <div className="sticky top-24">
-                            <h2 className="font-hanken font-bold text-4xl lg:text-6xl text-white mb-6">
-                                Work <br /> Experience
-                            </h2>
-                            <p className="font-montserrat text-neutral-400 text-lg max-w-sm">
-                                My professional journey and the companies I've had the privilege to work with.
-                            </p>
+                            <FadeIn direction="right">
+                                <h2 className="font-hanken font-bold text-4xl lg:text-6xl text-white mb-6">
+                                    Work <br /> Experience
+                                </h2>
+                            </FadeIn>
+                            <FadeIn delay={0.2} direction="right">
+                                <p className="font-montserrat text-neutral-400 text-lg max-w-sm">
+                                    My professional journey and the companies I've had the privilege to work with.
+                                </p>
+                            </FadeIn>
                         </div>
                     </div>
 
                     {/* Timeline Column */}
-                    <div className="md:w-2/3 flex flex-col gap-12 border-l border-neutral-800 pl-8 md:pl-17 relative">
+                    <StaggerContainer className="md:w-2/3 flex flex-col gap-12 border-l border-neutral-800 pl-8 md:pl-17 relative">
                         {experiences.map((exp) => (
-                            <div key={exp.id} className="relative group">
+                            <FadeIn key={exp.id} direction="left" className="relative group">
                                 {/* Timeline Dot */}
                                 <div className="absolute -left-[45px] md:-left-[77px] top-2 w-4 h-4 rounded-full bg-neutral-800 border-2 border-black group-hover:bg-orange-500 transition-colors duration-300"></div>
 
@@ -105,9 +111,9 @@ export default function Experience() {
                                         </span>
                                     ))}
                                 </div>
-                            </div>
+                            </FadeIn>
                         ))}
-                    </div>
+                    </StaggerContainer>
                 </div>
                 {/* Background Gradient - Orange tint */}
                 <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-orange-900/10 rounded-full blur-[120px] pointer-events-none"></div>

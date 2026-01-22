@@ -19,11 +19,11 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Maqsoud | AI Developer & Full Stack Engineer",
     description: "Building the future of digital experiences with AI and modern tech.",
-    url: "https://maqsoud.dev",
+    url: "https://maqsoud.tech",
     siteName: "Maqsoud Portfolio",
     images: [
       {
-        url: "/og-image.png", // Assuming we might add one later, or it falls back
+        url: "/og-image.png",
         width: 1200,
         height: 630,
         alt: "Maqsoud Portfolio",
