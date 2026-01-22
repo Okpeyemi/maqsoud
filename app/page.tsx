@@ -1,6 +1,8 @@
 import About from "@/components/About";
 import Blog from "@/components/Blog";
+import Contact from "@/components/Contact";
 import Experience from "@/components/Experience";
+import Footer from "@/components/Footer";
 import GitHubActivity from "@/components/GitHubActivity";
 import Hero from "@/components/Hero";
 import Projects from "@/components/Projects";
@@ -18,6 +20,8 @@ export default function Home() {
       <Experience />
       <Blog />
       <GitHubActivity />
+      <Contact />
+      <Footer />
     </main>
   );
 }
