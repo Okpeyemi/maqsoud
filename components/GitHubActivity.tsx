@@ -21,6 +21,7 @@ export default function GitHubActivity() {
     const [error, setError] = useState(false);
     const [totalContributions, setTotalContributions] = useState<number>(0);
     const [selectedYear, setSelectedYear] = useState<number | "last">("last");
+    const [currentCommitIndex, setCurrentCommitIndex] = useState(0);
     const years = [2026, 2025, 2024];
 
     // Fetch latest commits once (independent of year filter)
@@ -82,14 +83,14 @@ export default function GitHubActivity() {
     };
 
     return (
-        <section id="github-activity" className="w-full bg-black py-24 px-6 border-t border-neutral-900 relative overflow-hidden">
+        <section id="github-activity" className="w-full bg-black py-16 md:py-24 px-6 border-t border-neutral-900 relative overflow-hidden">
             <div className="max-w-[1400px] mx-auto">
                 <div className="flex flex-col md:flex-row justify-between items-end mb-12 gap-6">
                     <div>
                         <h2 className="font-hanken font-bold text-4xl lg:text-6xl text-white mb-4">
                             Dev Log
                         </h2>
-                        <p className="font-montserrat text-neutral-400 text-lg max-w-xl">
+                        <p className="font-montserrat text-neutral-400 text-lg max-w-xl max-lg:text-justify">
                             Tracking my latest code contributions and updates.
                         </p>
                     </div>
@@ -176,7 +177,8 @@ export default function GitHubActivity() {
                     </p>
                 </div>
 
-                <div className="grid grid-cols-1 gap-4">
+                {/* Desktop View (Grid) */}
+                <div className="hidden lg:grid grid-cols-1 gap-4">
                     {commits.map((commit, index) => (
                         <Link
                             key={commit.sha}
@@ -186,15 +188,15 @@ export default function GitHubActivity() {
                         >
                             <div className="bg-neutral-900/30 border border-neutral-800 rounded-2xl p-6 flex flex-col md:flex-row items-start md:items-center justify-between gap-4 group-hover:bg-neutral-900/50 group-hover:border-neutral-700 transition-all">
                                 <div className="flex items-center gap-4">
-                                    <div className="w-10 h-10 rounded-full bg-neutral-800 flex items-center justify-center text-orange-500">
+                                    <div className="w-10 h-10 rounded-full bg-neutral-800 flex items-center justify-center text-orange-500 shrink-0">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                                             <circle cx="12" cy="12" r="4"></circle>
                                             <line x1="1.05" y1="12" x2="7" y2="12"></line>
                                             <line x1="17.01" y1="12" x2="22.96" y2="12"></line>
                                         </svg>
                                     </div>
-                                    <div className="flex-1">
-                                        <p className="text-white font-hanken font-medium text-lg group-hover:text-orange-500 transition-colors">
+                                    <div className="flex-1 min-w-0">
+                                        <p className="text-white font-hanken font-medium text-lg group-hover:text-orange-500 transition-colors truncate">
                                             {commit.commit.message}
                                         </p>
                                         <div className="flex items-center gap-2 text-sm text-neutral-500 font-mono mt-1">
@@ -211,6 +213,66 @@ export default function GitHubActivity() {
                             </div>
                         </Link>
                     ))}
+                </div>
+
+                {/* Mobile View (Carousel) */}
+                <div className="lg:hidden relative">
+                    {commits.length > 0 && (
+                        <div className="relative">
+                            <Link
+                                href={commits[currentCommitIndex].html_url}
+                                target="_blank"
+                                className="block group"
+                            >
+                                <div className="bg-neutral-900/30 border border-neutral-800 rounded-2xl p-6 flex flex-col gap-4 group-hover:bg-neutral-900/50 group-hover:border-neutral-700 transition-all min-h-[180px]">
+                                    <div className="flex items-center gap-4">
+                                        <div className="w-10 h-10 rounded-full bg-neutral-800 flex items-center justify-center text-orange-500 shrink-0">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                                <circle cx="12" cy="12" r="4"></circle>
+                                                <line x1="1.05" y1="12" x2="7" y2="12"></line>
+                                                <line x1="17.01" y1="12" x2="22.96" y2="12"></line>
+                                            </svg>
+                                        </div>
+                                        <div className="flex-1 min-w-0">
+                                            <p className="text-white font-hanken font-medium text-lg group-hover:text-orange-500 transition-colors line-clamp-2">
+                                                {commits[currentCommitIndex].commit.message}
+                                            </p>
+                                            <div className="flex items-center gap-2 text-sm text-neutral-500 font-mono mt-1">
+                                                <span>{commits[currentCommitIndex].sha.substring(0, 7)}</span>
+                                                <span>•</span>
+                                                <span>{commits[currentCommitIndex].commit.author.name}</span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div className="text-neutral-500 font-montserrat text-sm border-t border-neutral-800 pt-4 mt-auto">
+                                        {formatDate(commits[currentCommitIndex].commit.author.date)}
+                                    </div>
+                                </div>
+                            </Link>
+
+                            {/* Navigation Arrows */}
+                            <div className="flex justify-between items-center mt-4 px-2">
+                                <button
+                                    onClick={() => setCurrentCommitIndex(prev => prev > 0 ? prev - 1 : commits.length - 1)}
+                                    className="p-3 rounded-full bg-neutral-900 border border-neutral-800 text-white hover:bg-neutral-800 hover:text-orange-500 transition-all font-bold"
+                                    aria-label="Previous commit"
+                                >
+                                    ←
+                                </button>
+                                <span className="text-sm font-mono text-neutral-500">
+                                    {currentCommitIndex + 1} / {commits.length}
+                                </span>
+                                <button
+                                    onClick={() => setCurrentCommitIndex(prev => prev < commits.length - 1 ? prev + 1 : 0)}
+                                    className="p-3 rounded-full bg-neutral-900 border border-neutral-800 text-white hover:bg-neutral-800 hover:text-orange-500 transition-all font-bold"
+                                    aria-label="Next commit"
+                                >
+                                    →
+                                </button>
+                            </div>
+                        </div>
+                    )}
                 </div>
             </div>
             {/* Background Gradient */}

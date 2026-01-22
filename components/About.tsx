@@ -2,7 +2,7 @@ import Link from "next/link";
 
 export default function About() {
     return (
-        <section id="about" className="w-full bg-black py-24 px-6 relative overflow-hidden">
+        <section id="about" className="w-full bg-black py-16 md:py-24 px-6 relative overflow-hidden">
             <div className="max-w-[1400px] mx-auto flex flex-col lg:flex-row">
                 {/* Left Column (Spacer/Decorational - optional) */}
                 <div className="hidden lg:block lg:w-1/3"></div>

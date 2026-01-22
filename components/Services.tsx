@@ -26,7 +26,7 @@ export default function Services() {
     ];
 
     return (
-        <section id="services" className="w-full bg-black py-24 px-6 relative overflow-hidden">
+        <section id="services" className="w-full bg-black py-16 md:py-24 px-6 relative overflow-hidden">
             <div className="max-w-[1400px] mx-auto">
                 {/* Header content */}
                 <div className="flex flex-col md:flex-row justify-between items-start gap-12 mb-20">

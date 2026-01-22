@@ -30,7 +30,7 @@ export default function Blog() {
     ];
 
     return (
-        <section id="blog" className="w-full bg-black py-24 px-6 border-t border-neutral-900 relative overflow-hidden">
+        <section id="blog" className="w-full bg-black py-16 md:py-24 px-6 border-t border-neutral-900 relative overflow-hidden">
             <div className="max-w-[1400px] mx-auto">
                 {/* Header */}
                 <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">

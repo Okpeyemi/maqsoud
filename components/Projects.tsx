@@ -51,7 +51,7 @@ export default function Projects() {
     );
 
     return (
-        <section id="projects" className="w-full bg-black py-24 px-6 relative overflow-hidden">
+        <section id="projects" className="w-full bg-black py-16 md:py-24 px-6 relative overflow-hidden">
             <div className="max-w-[1400px] mx-auto">
                 {/* Header */}
                 <div className="mb-16">

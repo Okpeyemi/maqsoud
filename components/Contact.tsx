@@ -2,7 +2,7 @@ import Link from "next/link";
 
 export default function Contact() {
     return (
-        <section id="contact" className="w-full bg-black py-24 px-6 border-t border-neutral-900 relative overflow-hidden">
+        <section id="contact" className="w-full bg-black py-16 md:py-24 px-6 border-t border-neutral-900 relative overflow-hidden">
             <div className="max-w-[1400px] mx-auto text-center">
                 <h2 className="font-hanken font-bold text-4xl lg:text-6xl text-white mb-6">
                     Let's Connect

@@ -30,7 +30,7 @@ export default function Experience() {
     ];
 
     return (
-        <section id="experience" className="w-full bg-black py-24 px-6 relative overflow-hidden">
+        <section id="experience" className="w-full bg-black py-16 md:py-24 px-6 relative overflow-hidden">
             <div className="max-w-[1400px] mx-auto">
                 <div className="flex flex-col md:flex-row gap-16 lg:gap-24">
                     {/* Header Column */}
@@ -84,6 +84,7 @@ export default function Experience() {
                 </div>
                 {/* Background Gradient - Orange tint */}
                 <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-orange-900/10 rounded-full blur-[120px] pointer-events-none"></div>
+            </div>
         </section >
     );
 }

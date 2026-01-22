@@ -1,37 +1,95 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
+import { useState, useEffect } from "react";
 
 export default function Hero() {
+    const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
+    // Lock body scroll when menu is open
+    useEffect(() => {
+        if (isMobileMenuOpen) {
+            document.body.style.overflow = "hidden";
+        } else {
+            document.body.style.overflow = "unset";
+        }
+        return () => {
+            document.body.style.overflow = "unset";
+        }
+    }, [isMobileMenuOpen]);
+
+    const navLinks = [
+        { href: "#about", label: "About" },
+        { href: "#services", label: "Services" },
+        { href: "#projects", label: "Projects" },
+        { href: "#experience", label: "Experience" },
+        { href: "#blog", label: "Blog" },
+        { href: "#contact", label: "Contact" },
+    ];
+
     return (
         <div className="min-h-screen bg-black text-white font-montserrat relative overflow-hidden flex flex-col">
             {/* Navbar */}
-            <nav className="flex items-center justify-between px-8 py-6 container z-30 mx-auto">
-                <div className="flex items-center gap-3 bg-neutral-900/50 px-6 py-4 rounded-full border border-neutral-800">
+            <nav className="flex items-center justify-between px-8 py-6 container z-50 mx-auto relative">
+                <div className="flex items-center gap-3 bg-neutral-900/50 px-6 py-4 rounded-full border border-neutral-800 backdrop-blur-md">
                     <div className="w-6 h-6 rounded-full bg-gradient-to-br from-orange-400 to-red-600 flex items-center justify-center text-[10px] font-bold">
                         M
                     </div>
                     <span className="font-hanken font-medium">Maqsoud</span>
-                    <button className="ml-2">
-                        <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            width="20"
-                            height="20"
-                            viewBox="0 0 24 24"
-                            fill="none"
-                            stroke="currentColor"
-                            strokeWidth="2"
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                        >
-                            <line x1="3" y1="12" x2="21" y2="12"></line>
-                            <line x1="3" y1="6" x2="21" y2="6"></line>
-                            <line x1="3" y1="18" x2="21" y2="18"></line>
-                        </svg>
+                    <button
+                        onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+                        className="ml-4 p-1 hover:bg-neutral-800 rounded-full transition-colors relative z-50"
+                        aria-label="Toggle menu"
+                    >
+                        {isMobileMenuOpen ? (
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                <line x1="18" y1="6" x2="6" y2="18"></line>
+                                <line x1="6" y1="6" x2="18" y2="18"></line>
+                            </svg>
+                        ) : (
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="20"
+                                height="20"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                strokeWidth="2"
+                                strokeLinecap="round"
+                                strokeLinejoin="round"
+                            >
+                                <line x1="3" y1="12" x2="21" y2="12"></line>
+                                <line x1="3" y1="6" x2="21" y2="6"></line>
+                                <line x1="3" y1="18" x2="21" y2="18"></line>
+                            </svg>
+                        )}
                     </button>
                 </div>
             </nav>
 
-            <main className="flex-1 w-full container mx-auto px-10 relative h-full flex flex-col justify-end pb-0">
+            {/* Mobile Menu Overlay */}
+            <div
+                className={`fixed inset-0 bg-black/95 backdrop-blur-xl z-40 flex flex-col items-center justify-center transition-all duration-500 ease-in-out ${isMobileMenuOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
+                    }`}
+            >
+                <div className="flex flex-col items-center gap-8">
+                    {navLinks.map((link, index) => (
+                        <Link
+                            key={link.href}
+                            href={link.href}
+                            onClick={() => setIsMobileMenuOpen(false)}
+                            className={`font-hanken font-bold text-4xl md:text-6xl text-white hover:text-orange-500 transition-all duration-300 transform translate-y-0 ${isMobileMenuOpen ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"
+                                }`}
+                            style={{ transitionDelay: `${index * 50}ms` }}
+                        >
+                            {link.label}
+                        </Link>
+                    ))}
+                </div>
+            </div>
+
+            <main className="flex-1 w-full container mx-auto px-6 md:px-10 relative h-full flex flex-col justify-end pb-0">
 
                 {/* FOREGROUND CONTENT (Z-20) */}
                 {/* "Le tout dans une div au dessus de l'image" */}
@@ -87,7 +145,7 @@ export default function Hero() {
 
                     {/* Bottom Section: Maqsoud Typography */}
                     {/* "En dessous" */}
-                    <div className="container flex justify-center mt-auto">
+                    <div className="max-lg:hidden container flex justify-center mt-auto">
                         <span className="font-hanken font-bold text-[18vw] leading-[0.7] text-neutral-100 opacity-80 tracking-normal mix-blend-overlay translate-y-[5%]">
                             Maqsoud
                         </span>
