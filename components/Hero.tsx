@@ -25,7 +25,7 @@ export default function Hero() {
         { href: "#services", label: "Services" },
         { href: "#projects", label: "Projects" },
         { href: "#experience", label: "Experience" },
-        { href: "#blog", label: "Blog" },
+        // { href: "#blog", label: "Blog" },
         { href: "#contact", label: "Contact" },
     ];
 
