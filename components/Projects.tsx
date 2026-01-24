@@ -142,7 +142,7 @@ export default function Projects() {
         <section id="projects" className="w-full bg-black py-16 md:py-24 px-6 relative overflow-hidden">
             <div className="max-w-[1400px] mx-auto">
                 {/* Header */}
-                <div className="mb-16">
+                <div className="mb-16 max-md:text-center">
                     <FadeIn direction="up">
                         <h2 className="font-hanken font-bold text-4xl lg:text-6xl text-white mb-6">
                             Selected Projects
@@ -157,7 +157,7 @@ export default function Projects() {
 
                     {/* Tabs */}
                     <FadeIn delay={0.3} direction="up">
-                        <div className="flex items-center gap-2 bg-neutral-900/50 p-1 rounded-full w-fit border border-neutral-800">
+                        <div className="flex items-center gap-2 bg-neutral-900/50 p-1 rounded-full w-fit border border-neutral-800 max-md:mx-auto">
                             <button
                                 onClick={() => handleTabChange("client")}
                                 className={`px-6 py-2 rounded-full font-hanken font-medium transition-all duration-300 ${activeTab === "client"

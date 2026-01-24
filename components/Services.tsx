@@ -30,7 +30,7 @@ export default function Services() {
         <section id="services" className="w-full bg-black py-16 md:py-24 px-6 relative overflow-hidden">
             <div className="max-w-[1400px] mx-auto">
                 {/* Header content */}
-                <div className="flex flex-col md:flex-row justify-between items-start gap-12 mb-20">
+                <div className="flex flex-col md:flex-row justify-between items-start gap-12 mb-20 max-md:items-center max-md:text-center">
                     <FadeIn direction="right">
                         <h2 className="font-hanken font-bold text-4xl lg:text-6xl text-white leading-[1.1] max-w-xl">
                             Design Solutions That <br />
@@ -68,7 +68,7 @@ export default function Services() {
                                     />
                                 </div>
 
-                                <div className="flex flex-col gap-4">
+                                <div className="flex flex-col gap-4 max-md:text-center">
                                     <h3 className="font-hanken font-bold text-2xl text-white group-hover:text-orange-500 transition-colors">
                                         {service.title}
                                     </h3>

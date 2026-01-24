@@ -100,7 +100,7 @@ export default function Hero() {
                     <div className="flex-1 container mx-auto w-full flex flex-col lg:flex-row justify-between items-center lg:items-end px-6 pb-12 w-full mt-20 lg:mt-0 pointer-events-auto">
 
                         {/* Left Content */}
-                        <div className="flex flex-col items-start gap-8 mb-10 lg:mb-0">
+                        <div className="flex flex-col items-start gap-8 mb-10 lg:mb-0 max-md:items-center">
                             <FadeIn delay={0.2} direction="right">
                                 <div className="inline-flex items-center gap-2 bg-neutral-900/80 px-4 py-2 rounded-full border border-neutral-800 w-fit backdrop-blur-sm">
                                     <span className="w-2 h-2 rounded-full bg-red-500 animate-pulse"></span>
@@ -109,7 +109,7 @@ export default function Hero() {
                             </FadeIn>
 
                             <FadeIn delay={0.4} direction="up">
-                                <h1 className="font-hanken text-5xl lg:text-7xl font-bold leading-[1.1]">
+                                <h1 className="font-hanken text-5xl lg:text-7xl font-bold leading-[1.1] max-md:text-center">
                                     AI Developer <br />
                                     <span className="text-neutral-400">based in Benin</span>
                                 </h1>
@@ -142,7 +142,7 @@ export default function Hero() {
                         </div>
 
                         {/* Right Content */}
-                        <div className="flex flex-col justify-end text-left lg:text-right max-w-sm">
+                        <div className="flex flex-col justify-end text-left lg:text-right max-w-sm max-md:text-center">
                             <FadeIn delay={0.8} direction="left">
                                 <p className="text-neutral-400 text-lg lg:text-xl leading-relaxed">
                                     Hi, I'm Maqsoud. <br />

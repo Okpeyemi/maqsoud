@@ -87,14 +87,14 @@ export default function GitHubActivity() {
         <section id="github-activity" className="w-full bg-black py-16 md:py-24 px-6 border-t border-neutral-900 relative overflow-hidden">
             <div className="max-w-[1400px] mx-auto">
                 <div className="flex flex-col md:flex-row justify-between items-end mb-12 gap-6">
-                    <div>
+                    <div className="max-md:text-center">
                         <FadeIn direction="up">
                             <h2 className="font-hanken font-bold text-4xl lg:text-6xl text-white mb-4">
                                 Dev Log
                             </h2>
                         </FadeIn>
                         <FadeIn delay={0.2} direction="up">
-                            <p className="font-montserrat text-neutral-400 text-lg max-w-xl max-lg:text-justify">
+                            <p className="font-montserrat text-neutral-400 text-lg max-w-xl">
                                 Tracking my latest code contributions and updates.
                             </p>
                         </FadeIn>

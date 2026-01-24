@@ -64,7 +64,7 @@ export default function Experience() {
                 <div className="flex flex-col md:flex-row gap-16 lg:gap-24">
                     {/* Header Column */}
                     <div className="md:w-1/3 flex-shrink-0">
-                        <div className="sticky top-24">
+                        <div className="sticky top-24 max-md:text-center">
                             <FadeIn direction="right">
                                 <h2 className="font-hanken font-bold text-4xl lg:text-6xl text-white mb-6">
                                     Work <br /> Experience
@@ -79,7 +79,7 @@ export default function Experience() {
                     </div>
 
                     {/* Timeline Column */}
-                    <StaggerContainer className="md:w-2/3 flex flex-col gap-12 border-l border-neutral-800 pl-8 md:pl-17 relative">
+                    <StaggerContainer className="md:w-2/3 flex flex-col gap-12 border-l border-neutral-800 pl-9 md:pl-17 relative">
                         {experiences.map((exp) => (
                             <FadeIn key={exp.id} direction="left" className="relative group">
                                 {/* Timeline Dot */}

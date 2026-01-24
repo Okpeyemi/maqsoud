@@ -22,9 +22,9 @@ export default function About() {
                 </div>
 
                 {/* Right Column (Content) */}
-                <div className="lg:w-2/3 flex flex-col items-start lg:items-end text-left lg:text-right gap-8 z-10">
+                <div className="lg:w-2/3 flex flex-col items-start lg:items-end text-left lg:text-right gap-8 z-10  max-md:items-center">
                     <FadeIn direction="up">
-                        <h2 className="font-hanken font-bold text-5xl lg:text-7xl leading-[1.1] tracking-tight">
+                        <h2 className="font-hanken font-bold text-5xl lg:text-7xl leading-[1.1] tracking-tight max-md:text-center">
                             Crafting Meaningful <br />
                             Brands & Intuitive <br />
                             Digital Experiences <br />
@@ -35,7 +35,7 @@ export default function About() {
                     </FadeIn>
 
                     <FadeIn delay={0.2} direction="up">
-                        <p className="font-montserrat text-neutral-400 text-lg lg:text-xl leading-relaxed max-w-2xl">
+                        <p className="font-montserrat text-neutral-400 text-lg lg:text-xl leading-relaxed max-w-2xl max-md:text-center">
                             I'm Maqsoud, a Benin-based AI Developer and UI/UX enthusiast geared about creating visually compelling identities and seamless digital experiences. With a strategic approach and a keen eye for detail, I help businesses stand out and connect with their audience. Let's create something remarkable together.
                         </p>
                     </FadeIn>
