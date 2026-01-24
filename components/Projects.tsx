@@ -10,14 +10,14 @@ export default function Projects() {
     const [activeTab, setActiveTab] = useState<"client" | "personal">("client");
 
     const clientProjects = [
-        {
-            id: 1,
-            title: "Iris Voyance",
-            description: "A website for Iris Voyance, a psychic and astrological voyance.",
-            image: "/projets/client-1.png",
-            link: "https://iris-voyance.vercel.app/",
-            category: "client",
-        },
+        // {
+        //     id: 1,
+        //     title: "Iris Voyance",
+        //     description: "A website for Iris Voyance, a psychic and astrological voyance.",
+        //     image: "/projets/client-1.png",
+        //     link: "https://iris-voyance.vercel.app/",
+        //     category: "client",
+        // },
         {
             id: 2,
             title: "Kotenou",
