@@ -7,7 +7,7 @@ import { StaggerContainer, cardVariants, FadeIn } from "./Animations";
 import { motion } from "framer-motion";
 
 export default function Projects() {
-    const [activeTab, setActiveTab] = useState<"client" | "personal">("client");
+    const [activeTab, setActiveTab] = useState<"client" | "personal">("personal");
 
     const clientProjects = [
         // {
@@ -159,15 +159,6 @@ export default function Projects() {
                     <FadeIn delay={0.3} direction="up">
                         <div className="flex items-center gap-2 bg-neutral-900/50 p-1 rounded-full w-fit border border-neutral-800 max-md:mx-auto">
                             <button
-                                onClick={() => handleTabChange("client")}
-                                className={`px-6 py-2 rounded-full font-hanken font-medium transition-all duration-300 ${activeTab === "client"
-                                    ? "bg-neutral-800 text-white shadow-sm"
-                                    : "text-neutral-400 hover:text-white"
-                                    }`}
-                            >
-                                Client Projects
-                            </button>
-                            <button
                                 onClick={() => handleTabChange("personal")}
                                 className={`px-6 py-2 rounded-full font-hanken font-medium transition-all duration-300 ${activeTab === "personal"
                                     ? "bg-neutral-800 text-white shadow-sm"
@@ -175,6 +166,15 @@ export default function Projects() {
                                     }`}
                             >
                                 Personal Projects
+                            </button>
+                            <button
+                                onClick={() => handleTabChange("client")}
+                                className={`px-6 py-2 rounded-full font-hanken font-medium transition-all duration-300 ${activeTab === "client"
+                                    ? "bg-neutral-800 text-white shadow-sm"
+                                    : "text-neutral-400 hover:text-white"
+                                    }`}
+                            >
+                                Client Projects
                             </button>
                         </div>
                     </FadeIn>
