@@ -6,7 +6,7 @@ export default function GitHubActivityPage() {
     return (
         <main>
             <Header />
-            <GitHubActivity />
+            <GitHubActivity showCommits={true} />
             <Footer />
         </main>
     );

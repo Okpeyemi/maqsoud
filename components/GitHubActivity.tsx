@@ -16,7 +16,11 @@ interface Commit {
     html_url: string;
 }
 
-export default function GitHubActivity() {
+interface GitHubActivityProps {
+    showCommits?: boolean;
+}
+
+export default function GitHubActivity({ showCommits = false }: GitHubActivityProps) {
     const [commits, setCommits] = useState<Commit[]>([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(false);
@@ -178,58 +182,19 @@ export default function GitHubActivity() {
                 </FadeIn>
 
                 {/* Desktop View (Grid) */}
-                <StaggerContainer className="hidden lg:grid grid-cols-1 gap-4">
-                    {commits.map((commit, index) => (
-                        <FadeIn
-                            key={commit.sha}
-                            direction="up"
-                        >
-                            <Link
-                                href={commit.html_url}
-                                target="_blank"
-                                className="block group"
+                {showCommits && (
+                    <StaggerContainer className="hidden lg:grid grid-cols-1 gap-4">
+                        {commits.map((commit, index) => (
+                            <FadeIn
+                                key={commit.sha}
+                                direction="up"
                             >
-                                <div className="bg-neutral-900/30 border border-neutral-800 rounded-2xl p-6 flex flex-col md:flex-row items-start md:items-center justify-between gap-4 group-hover:bg-neutral-900/50 group-hover:border-neutral-700 transition-all">
-                                    <div className="flex items-center gap-4">
-                                        <div className="w-10 h-10 rounded-full bg-neutral-800 flex items-center justify-center text-orange-500 shrink-0">
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                                                <circle cx="12" cy="12" r="4"></circle>
-                                                <line x1="1.05" y1="12" x2="7" y2="12"></line>
-                                                <line x1="17.01" y1="12" x2="22.96" y2="12"></line>
-                                            </svg>
-                                        </div>
-                                        <div className="flex-1 min-w-0">
-                                            <p className="text-white font-hanken font-medium text-lg group-hover:text-orange-500 transition-colors">
-                                                {commit.commit.message}
-                                            </p>
-                                            <div className="flex items-center gap-2 text-sm text-neutral-500 font-mono mt-1">
-                                                <span>{commit.sha.substring(0, 7)}</span>
-                                                <span>•</span>
-                                                <span>{commit.commit.author.name}</span>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div className="text-neutral-500 font-montserrat text-sm whitespace-nowrap">
-                                        {formatDate(commit.commit.author.date)}
-                                    </div>
-                                </div>
-                            </Link>
-                        </FadeIn>
-                    ))}
-                </StaggerContainer>
-
-                {/* Mobile View (Carousel) */}
-                <div className="lg:hidden relative">
-                    {commits.length > 0 && (
-                        <FadeIn direction="up">
-                            <div className="relative">
                                 <Link
-                                    href={commits[currentCommitIndex].html_url}
+                                    href={commit.html_url}
                                     target="_blank"
                                     className="block group"
                                 >
-                                    <div className="bg-neutral-900/30 border border-neutral-800 rounded-2xl p-6 flex flex-col gap-4 group-hover:bg-neutral-900/50 group-hover:border-neutral-700 transition-all min-h-[180px]">
+                                    <div className="bg-neutral-900/30 border border-neutral-800 rounded-2xl p-6 flex flex-col md:flex-row items-start md:items-center justify-between gap-4 group-hover:bg-neutral-900/50 group-hover:border-neutral-700 transition-all">
                                         <div className="flex items-center gap-4">
                                             <div className="w-10 h-10 rounded-full bg-neutral-800 flex items-center justify-center text-orange-500 shrink-0">
                                                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -239,51 +204,94 @@ export default function GitHubActivity() {
                                                 </svg>
                                             </div>
                                             <div className="flex-1 min-w-0">
-                                                <p className="text-white font-hanken font-medium text-lg group-hover:text-orange-500 transition-colors line-clamp-2">
-                                                    {commits[currentCommitIndex].commit.message}
+                                                <p className="text-white font-hanken font-medium text-lg group-hover:text-orange-500 transition-colors">
+                                                    {commit.commit.message}
                                                 </p>
                                                 <div className="flex items-center gap-2 text-sm text-neutral-500 font-mono mt-1">
-                                                    <span>{commits[currentCommitIndex].sha.substring(0, 7)}</span>
+                                                    <span>{commit.sha.substring(0, 7)}</span>
                                                     <span>•</span>
-                                                    <span>{commits[currentCommitIndex].commit.author.name}</span>
+                                                    <span>{commit.commit.author.name}</span>
                                                 </div>
                                             </div>
                                         </div>
 
-                                        <div className="text-neutral-500 font-montserrat text-sm border-t border-neutral-800 pt-4 mt-auto">
-                                            {formatDate(commits[currentCommitIndex].commit.author.date)}
+                                        <div className="text-neutral-500 font-montserrat text-sm whitespace-nowrap">
+                                            {formatDate(commit.commit.author.date)}
                                         </div>
                                     </div>
                                 </Link>
+                            </FadeIn>
+                        ))}
+                    </StaggerContainer>
+                )}
 
-                                {/* Navigation Arrows */}
-                                <div className="flex justify-between items-center mt-4 px-2">
-                                    <button
-                                        onClick={() => setCurrentCommitIndex(prev => prev > 0 ? prev - 1 : commits.length - 1)}
-                                        className="p-3 rounded-full bg-neutral-900 border border-neutral-800 text-white hover:bg-neutral-800 hover:text-orange-500 transition-all font-bold"
-                                        aria-label="Previous commit"
+                {/* Mobile View (Carousel) */}
+                {showCommits && (
+                    <div className="lg:hidden relative">
+                        {commits.length > 0 && (
+                            <FadeIn direction="up">
+                                <div className="relative">
+                                    <Link
+                                        href={commits[currentCommitIndex].html_url}
+                                        target="_blank"
+                                        className="block group"
                                     >
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                                            <path d="m15 18-6-6 6-6" />
-                                        </svg>
-                                    </button>
-                                    <span className="text-sm font-mono text-neutral-500">
-                                        {currentCommitIndex + 1} / {commits.length}
-                                    </span>
-                                    <button
-                                        onClick={() => setCurrentCommitIndex(prev => prev < commits.length - 1 ? prev + 1 : 0)}
-                                        className="p-3 rounded-full bg-neutral-900 border border-neutral-800 text-white hover:bg-neutral-800 hover:text-orange-500 transition-all font-bold"
-                                        aria-label="Next commit"
-                                    >
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                                            <path d="m9 18 6-6-6-6" />
-                                        </svg>
-                                    </button>
+                                        <div className="bg-neutral-900/30 border border-neutral-800 rounded-2xl p-6 flex flex-col gap-4 group-hover:bg-neutral-900/50 group-hover:border-neutral-700 transition-all min-h-[180px]">
+                                            <div className="flex items-center gap-4">
+                                                <div className="w-10 h-10 rounded-full bg-neutral-800 flex items-center justify-center text-orange-500 shrink-0">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                                        <circle cx="12" cy="12" r="4"></circle>
+                                                        <line x1="1.05" y1="12" x2="7" y2="12"></line>
+                                                        <line x1="17.01" y1="12" x2="22.96" y2="12"></line>
+                                                    </svg>
+                                                </div>
+                                                <div className="flex-1 min-w-0">
+                                                    <p className="text-white font-hanken font-medium text-lg group-hover:text-orange-500 transition-colors line-clamp-2">
+                                                        {commits[currentCommitIndex].commit.message}
+                                                    </p>
+                                                    <div className="flex items-center gap-2 text-sm text-neutral-500 font-mono mt-1">
+                                                        <span>{commits[currentCommitIndex].sha.substring(0, 7)}</span>
+                                                        <span>•</span>
+                                                        <span>{commits[currentCommitIndex].commit.author.name}</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div className="text-neutral-500 font-montserrat text-sm border-t border-neutral-800 pt-4 mt-auto">
+                                                {formatDate(commits[currentCommitIndex].commit.author.date)}
+                                            </div>
+                                        </div>
+                                    </Link>
+
+                                    {/* Navigation Arrows */}
+                                    <div className="flex justify-between items-center mt-4 px-2">
+                                        <button
+                                            onClick={() => setCurrentCommitIndex(prev => prev > 0 ? prev - 1 : commits.length - 1)}
+                                            className="p-3 rounded-full bg-neutral-900 border border-neutral-800 text-white hover:bg-neutral-800 hover:text-orange-500 transition-all font-bold"
+                                            aria-label="Previous commit"
+                                        >
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                                <path d="m15 18-6-6 6-6" />
+                                            </svg>
+                                        </button>
+                                        <span className="text-sm font-mono text-neutral-500">
+                                            {currentCommitIndex + 1} / {commits.length}
+                                        </span>
+                                        <button
+                                            onClick={() => setCurrentCommitIndex(prev => prev < commits.length - 1 ? prev + 1 : 0)}
+                                            className="p-3 rounded-full bg-neutral-900 border border-neutral-800 text-white hover:bg-neutral-800 hover:text-orange-500 transition-all font-bold"
+                                            aria-label="Next commit"
+                                        >
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                                <path d="m9 18 6-6-6-6" />
+                                            </svg>
+                                        </button>
+                                    </div>
                                 </div>
-                            </div>
-                        </FadeIn>
-                    )}
-                </div>
+                            </FadeIn>
+                        )}
+                    </div>
+                )}
             </div>
             {/* Background Gradient */}
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-orange-900/5 rounded-full blur-[120px] pointer-events-none"></div>
