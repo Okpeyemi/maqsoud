@@ -24,7 +24,7 @@ export default function Header() {
         { href: "/#services", label: "Services" },
         { href: "/#projects", label: "Projects" },
         { href: "/#experience", label: "Experience" },
-        { href: "/blog", label: "Blog" },
+        // { href: "/blog", label: "Blog" },
         { href: "/github-activity", label: "GitHub Activity" },
         { href: "/#contact", label: "Contact" },
     ];
