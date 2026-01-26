@@ -4,12 +4,12 @@ export default function Experience() {
     const experiences = [
         {
             id: 1,
-            period: "Nov 2024 - Present",
-            role: "Maintainer & Lead Developer",
-            company: "Sèmè City Open Park (SCOP)",
+            period: "December 2025 - Present",
+            role: "Cohezi",
+            company: "Gemini 3 Hackathon",
             description:
-                "Evolutive and corrective maintenance of an entry/exit management system following a hackathon win. Monitoring interoperability, deploying fixes, functional improvements, and needs reassessment.",
-            skills: ["System Maintenance", "Interoperability", "Full Stack", "System Design"],
+                "Development, for the purpose of the Gemini 3 hackathon, of a cognitive evaluation engine designed to dissect, stress-test, and visualize the structure of human reasoning behind a decision, using Gemini 3 Flash and Pro.",
+            skills: ["Next.js", "Firebase", "Google AI", "Gemini 3 Flash", "Gemini 3 Pro"],
         },
         {
             id: 2,

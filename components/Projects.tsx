@@ -63,10 +63,10 @@ export default function Projects() {
     const personalProjects = [
         {
             id: 7,
-            title: "SpotMeUp",
-            description: "A SaaS platform for portfolio creation.",
+            title: "Cohezi",
+            description: "A cognitive evaluation engine designed to dissect, stress-test, and visualize the structure of human reasoning behind a decision, using Gemini 3 Flash and Pro.",
             image: "/projets/perso-1.png",
-            link: "https://spotmeup.vercel.app/",
+            link: "https://cohezi.vercel.app/",
             category: "personal",
         },
         {

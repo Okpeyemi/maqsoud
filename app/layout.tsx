@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Hanken_Grotesk, Montserrat } from "next/font/google";
 import "./globals.css";
+import Header from "@/components/Header";
 
 const hankenGrotesk = Hanken_Grotesk({
   variable: "--font-hanken",
@@ -39,6 +40,8 @@ export const metadata: Metadata = {
   },
 };
 
+
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -49,6 +52,7 @@ export default function RootLayout({
       <body
         className={`${hankenGrotesk.variable} ${montserrat.variable} antialiased`}
       >
+        <Header />
         {children}
       </body>
     </html>
