@@ -74,7 +74,7 @@ export default function Projects() {
             title: "Finset",
             description: "Financial management tool allowing users to track expenses and manage budgets effectively.",
             image: "/projets/perso-2.png",
-            link: "https://finset-phi.vercel.app/",
+            link: "https://finset-phi.vercel.app/dashboard",
             category: "personal",
         },
         {
