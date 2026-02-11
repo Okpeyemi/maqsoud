@@ -122,7 +122,7 @@ export default function Contact() {
         </StaggerContainer>
 
         {/* LinkedIn Badge */}
-        <FadeIn delay={0.6} direction="up">
+        {/* <FadeIn delay={0.6} direction="up">
           <div
             className="badge-base LI-profile-badge"
             data-locale="fr_FR"
@@ -139,7 +139,7 @@ export default function Contact() {
               Maqsoud TAWALIOU
             </a>
           </div>
-        </FadeIn>
+        </FadeIn> */}
       </div>
       {/* Background Gradient */}
       <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[600px] h-[400px] bg-gradient-to-t from-red-900/20 to-transparent blur-[120px] pointer-events-none"></div>

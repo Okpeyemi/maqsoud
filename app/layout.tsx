@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Hanken_Grotesk, Montserrat } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header";
-import Script from "next/script";
+// import Script from "next/script";
 
 const hankenGrotesk = Hanken_Grotesk({
   variable: "--font-hanken",
@@ -55,11 +55,11 @@ export default function RootLayout({
       >
         <Header />
         {children}
-        <Script
+        {/* <Script
           src="https://platform.linkedin.com/badges/js/profile.js"
           strategy="lazyOnload"
           type="text/javascript"
-        />
+        /> */}
       </body>
     </html>
   );
