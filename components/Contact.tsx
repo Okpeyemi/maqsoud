@@ -124,7 +124,7 @@ export default function Contact() {
         {/* LinkedIn Badge */}
         <FadeIn delay={0.6} direction="up">
           <div
-            class="badge-base LI-profile-badge"
+            className="badge-base LI-profile-badge"
             data-locale="fr_FR"
             data-size="large"
             data-theme="dark"
@@ -133,7 +133,7 @@ export default function Contact() {
             data-version="v1"
           >
             <a
-              class="badge-base__link LI-simple-link"
+              className="badge-base__link LI-simple-link"
               href="https://bj.linkedin.com/in/maqsoudtawaliou?trk=profile-badge"
             >
               Maqsoud TAWALIOU
