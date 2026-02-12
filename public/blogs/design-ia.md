@@ -1,399 +1,399 @@
 ---
-title: "L'Esthétique \"AI-Generated\" : Pourquoi les Sites Créés par IA se Ressemblent Tous (Et Comment l'Éviter)"
+title: "The 'AI-Generated' Aesthetic: Why AI-Created Sites All Look the Same (And How to Avoid It)"
 date: "2026-02-12"
 category: "Design Systems"
 image: "/blogs/images/design-ai.png"
-description: "Si vous avez récemment demandé à une IA de vous créer un site web, vous avez probablement obtenu quelque chose qui ressemble étrangement à... tous les autres sites créés par IA."
+description: "If you've recently asked an AI to create a website for you, you've probably gotten something that looks oddly like... every other AI-created site."
 ---
 
-*Temps de lecture : 8 minutes*
+*Reading time: 8 minutes*
 
 ---
 
-Si vous avez récemment demandé à une IA de vous créer un site web, vous avez probablement obtenu quelque chose qui ressemble étrangement à... tous les autres sites créés par IA. Gradient violet-bleu, glassmorphism, spacing parfaitement régulier, et ce je-ne-sais-quoi qui crie "généré automatiquement".
+If you've recently asked an AI to create a website for you, you've probably gotten something that looks oddly like... every other AI-created site. Purple-blue gradient, glassmorphism, perfectly regular spacing, and that je-ne-sais-quoi that screams "automatically generated".
 
-Mais voici où ça devient intéressant : donnez à cette même IA une capture d'écran d'un design existant, et soudainement, le résultat change du tout au tout. Plus unique, plus humain, plus... design.
+But here's where it gets interesting: give that same AI a screenshot of an existing design, and suddenly, the result changes completely. More unique, more human, more... design.
 
-J'ai passé les derniers mois à analyser ce phénomène, et ce que j'ai découvert change complètement la façon dont on devrait utiliser l'IA pour le design web.
+I've spent the last few months analyzing this phenomenon, and what I found changes completely how we should use AI for web design.
 
-## Le Problème : L'Uniformisation Esthétique
+## The Problem: Aesthetic Uniformization
 
-### Le "Starter Pack" du Site IA
+### The AI Site "Starter Pack"
 
-Vous les avez vus. Ces sites qui partagent tous la même ADN visuelle :
+You've seen them. Those sites that all share the same visual DNA:
 
-**Les Couleurs**
-- Gradients violet → bleu (ou rose → orange en variante)
-- Palette ultra-saturée issue de Tailwind ou Material Design
-- Noir profond (#0f0f0f) et blanc pur, rarement des nuances
+**Colors**
+- Violet → blue gradients (or pink → orange variant)
+- Ultra-saturated palette from Tailwind or Material Design
+- Deep black (#0f0f0f) and pure white, rarely nuances
 
-**Les Effets**
-- Glassmorphism à tous les étages
-- Blur backdrop-filter sur chaque card
-- Box-shadows douces et prévisibles
-- Borders subtils en rgba(255,255,255,0.1)
+**Effects**
+- Glassmorphism everywhere
+- Blur backdrop-filter on every card
+- Soft and predictable box-shadows
+- Subtle borders in rgba(255,255,255,0.1)
 
-**Le Layout**
-- Hero section centrée avec CTA violet
-- Section "features" en grid 3 colonnes
-- Cards parfaitement alignées
-- Spacing ultra-régulier (multiples de 8px religieusement respectés)
+**Layout**
+- Centered Hero section with purple CTA
+- "Features" section in 3-column grid
+- Perfectly aligned Cards
+- Ultra-regular spacing (multiples of 8px religiously respected)
 
-**La Typographie**
-- Inter ou Poppins (90% des cas)
-- Weights : 400, 600, 700
-- Line-height à 1.5 exactement
-- Letter-spacing minimal
+**Typography**
+- Inter or Poppins (90% of cases)
+- Weights: 400, 600, 700
+- Line-height exactly 1.5
+- Minimal letter-spacing
 
-Ce n'est pas un mauvais design en soi. C'est juste... prévisible. Générique. Sans âme.
+It's not bad design per se. It's just... predictable. Generic. Soulless.
 
-### Pourquoi Cette Uniformité ?
+### Why This Uniformity?
 
-La réponse tient en trois mots : **optimisation pour la moyenne**.
+The answer lies in three words: **optimization for the average**.
 
-Quand vous demandez à une IA de créer un site web sans référence, voici ce qui se passe dans les coulisses :
+When you ask an AI to create a website without reference, here's what happens behind the scenes:
 
-1. **Pattern matching** : L'IA scanne ses données d'entraînement pour identifier les patterns les plus fréquents
-2. **Safe choices** : Elle privilégie les choix qui "marchent" statistiquement (bleu = confiance, violet = innovation)
-3. **Évitement du risque** : Sans contrainte créative, elle ne prend aucun risque esthétique
+1.  **Pattern matching**: The AI scans its training data to identify the most frequent patterns
+2.  **Safe choices**: It prioritizes choices that "work" statistically (blue = trust, purple = innovation)
+3.  **Risk avoidance**: Without creative constraints, it takes no aesthetic risks
 
-Le résultat ? Un design qui est la moyenne pondérée de millions de sites web. Techniquement correct, mais créativement mort.
+The result? A design that is the weighted average of millions of websites. Technically correct, but creatively dead.
 
-## L'Expérience : Deux Approches, Deux Résultats
+## The Experiment: Two Approaches, Two Results
 
-### Test 1 : La Demande Générique
+### Test 1: The Generic Request
 
-**Prompt** : "Crée-moi un site web moderne pour une startup SaaS"
+**Prompt**: "Create a modern website for a SaaS startup"
 
-**Résultat obtenu** :
-- Gradient violet-bleu en fond
-- Hero section avec "Transform Your Business" (ou variante)
-- Trois features cards avec icônes en glassmorphism
-- CTA button en violet avec hover effect
-- Footer minimaliste
+**Result obtained**:
+- Purple-blue gradient background
+- Hero section with "Transform Your Business" (or variant)
+- Three feature cards with glassmorphism icons
+- CTA button in purple with hover effect
+- Minimalist footer
 
-Temps de création : 30 secondes  
-Originalité : 0/10  
-Utilisabilité : 7/10
+Creation time: 30 seconds
+Originality: 0/10
+Usability: 7/10
 
-### Test 2 : Avec Référence Visuelle
+### Test 2: With Visual Reference
 
-**Prompt** : "Voici une capture d'écran d'un design que j'aime [image d'un site avec palette terracotta/beige, layout asymétrique, typo serif]. Reproduis ce style."
+**Prompt**: "Here is a screenshot of a design I like [image of a site with terracotta/beige palette, asymmetric layout, serif typo]. Reproduce this style."
 
-**Résultat obtenu** :
-- Palette chaude préservée
-- Layout asymétrique respecté
-- Typographie serif maintenue
-- Détails visuels uniques conservés
-- Personnalité du design original intacte
+**Result obtained**:
+- Warm palette preserved
+- Asymmetric layout respected
+- Serif typography maintained
+- Unique visual details kept
+- Personnel of original design intact
 
-Temps de création : 45 secondes  
-Originalité : 8/10  
-Fidélité à la référence : 9/10
+Creation time: 45 seconds
+Originality: 8/10
+Fidelity to reference: 9/10
 
-### La Différence Clé : Les Contraintes
+### The Key Difference: Constraints
 
-Sans contrainte, l'IA génère.  
-Avec contrainte, l'IA implémente.
+Without constraints, AI generates.
+With constraints, AI implements.
 
-Et c'est toute la différence entre un template générique et un design unique.
+And that is all the difference between a generic template and a unique design.
 
-## Pourquoi Ça Marche : La Psychologie de l'IA Générative
+## Why It Works: The Psychology of Generative AI
 
-### Le Mode "Génération"
+### The "Generation" Mode
 
-Quand l'IA opère en mode génération pure :
-- Elle s'appuie sur les probabilités issues de ses données
-- Elle favorise les combinaisons "sûres"
-- Elle évite les choix qui pourraient être mal reçus
-- Elle optimise pour la cohérence plutôt que l'originalité
+When AI operates in pure generation mode:
+- It relies on probabilities from its data
+- It favors "safe" combinations
+- It avoids choices that might be poorly received
+- It optimizes for consistency rather than originality
 
-C'est comme demander à quelqu'un de "dessiner une maison" sans autre indication. Vous obtiendrez un carré avec un triangle dessus (le toit), deux fenêtres et une porte. Techniquement une maison, mais pas architecturalement intéressant.
+It's like asking someone to "draw a house" without further instruction. You'll get a square with a triangle on top (the roof), two windows, and a door. Technically a house, but not architecturally interesting.
 
-### Le Mode "Implémentation"
+### The "Implementation" Mode
 
-Avec une référence visuelle, l'IA change de mode :
-- Elle analyse les contraintes concrètes (couleurs hex précises)
-- Elle identifie les patterns spécifiques (spacing personnalisé)
-- Elle préserve les choix créatifs (asymétries intentionnelles)
-- Elle reproduit plutôt qu'elle n'invente
+With a visual reference, AI switches modes:
+- It analyzes concrete constraints (precise hex colors)
+- It identifies specific patterns (custom spacing)
+- It preserves creative choices (intentional asymmetries)
+- It reproduces rather than invents
 
-Les détails humains sont conservés : cette légère asymétrie dans le layout, ce choix audacieux de palette, cette hiérarchie visuelle contre-intuitive mais efficace.
+Human details are preserved: that slight asymmetry in the layout, that bold palette choice, that counter-intuitive but effective visual hierarchy.
 
-## Les Implications pour le Design
+## Implications for Design
 
-### Ce Que Ça Signifie pour les Designers
+### What It Means for Designers
 
-**Bonne nouvelle** : L'IA ne remplace pas (encore) la créativité humaine
+**Good news**: AI does not (yet) replace human creativity
 
-Le processus créatif reste profondément humain :
-- L'idéation
-- Les choix esthétiques audacieux
-- L'équilibre entre tendance et intemporalité
-- La compréhension de la psychologie de la marque
+The creative process remains deeply human:
+- Ideation
+- Bold aesthetic choices
+- Balance between trend and timelessness
+- Understanding brand psychology
 
-**Mauvaise nouvelle** : L'implémentation pure devient commoditisée
+**Bad news**: Pure implementation becomes commoditized
 
-Si votre valeur ajoutée est uniquement de traduire un mockup en code HTML/CSS, votre position devient fragile. L'IA excelle déjà à cette tâche.
+If your added value is solely translating a mockup into HTML/CSS code, your position becomes fragile. AI already excels at this task.
 
-### Ce Que Ça Signifie pour les Développeurs
+### What It Means for Developers
 
-**Le nouveau workflow** :
-1. Designer (humain) crée le mockup ou la direction visuelle
-2. Brief détaillé ou référence visuelle communiquée à l'IA
-3. IA génère le code d'implémentation
-4. Développeur raffine, optimise, et intègre
+**The new workflow**:
+1.  Designer (human) creates mockup or visual direction
+2.  Detailed brief or visual reference communicated to AI
+3.  AI generates implementation code
+4.  Developer refines, optimizes, and integrates
 
-Le développeur devient superviseur et optimiseur plutôt qu'implémenteur pur.
+The developer becomes supervisor and optimizer rather than pure implementer.
 
-### Ce Que Ça Signifie pour les Entreprises
+### What It Means for Companies
 
-**Le piège à éviter** : Demander à l'IA de "faire le design"
+**The trap to avoid**: Asking AI to "do the design"
 
-Résultat garanti : un site qui ressemble à tous les autres. Dans un marché saturé, l'uniformité visuelle est un désavantage concurrentiel.
+Guaranteed result: a site that looks like all the others. In a saturated market, visual uniformity is a competitive disadvantage.
 
-**La bonne approche** : Investir dans la direction créative
+**The right approach**: Invest in creative direction
 
-1. Embaucher/consulter un vrai designer pour la phase créative
-2. Créer des mockups ou un design system
-3. Utiliser l'IA pour accélérer l'implémentation
-4. Garder l'humain dans la boucle pour le QA créatif
+1.  Hire/consult a real designer for the creative phase
+2.  Create mockups or a design system
+3.  Use AI to accelerate implementation
+4.  Keep the human in the loop for creative QA
 
-## Guide Pratique : Comment Utiliser l'IA Efficacement pour le Design
+## Practical Guide: How to Use AI Effectively for Design
 
-### Stratégie 1 : Toujours Partir d'une Référence
+### Strategy 1: Always Start from a Reference
 
-**Ne faites jamais** :
+**Never do**:
 ```
-"Crée-moi un site web pour mon entreprise"
-```
-
-**Faites plutôt** :
-```
-"Voici 3 captures d'écran de sites que j'aime [images]. 
-Crée un site qui combine le layout asymétrique du premier, 
-la palette de couleurs du second, et la typographie du troisième."
+"Create a website for my business"
 ```
 
-### Stratégie 2 : Briefs Ultra-Détaillés
+**Do instead**:
+```
+"Here are 3 screenshots of sites I like [images].
+Create a site that converts the asymmetric layout of the first,
+the color palette of the second, and the typography of the third."
+```
 
-Si vous n'avez pas de référence visuelle, compensez avec des contraintes précises :
+### Strategy 2: Ultra-Detailed Briefs
 
-**Brief générique (mauvais)** :
-> "Un site moderne et professionnel"
+If you don't have a visual reference, compensate with precise constraints:
 
-**Brief détaillé (bon)** :
-> "Style : Brutalisme moderne  
-> Palette : #E07A5F, #3D405B, #F2CC8F, #81B29A  
-> Typo : Space Grotesk pour les titres, IBM Plex Mono pour le body  
-> Layout : Asymétrique, grid désaligné intentionnellement  
-> Mood : Raw, authentique, anti-corporate  
-> Références : brutalistwebsites.com, swissdesignawards.ch"
+**Generic brief (bad)**:
+> "A modern and professional site"
 
-### Stratégie 3 : Itération Guidée
+**Detailed brief (good)**:
+> "Style: Modern Brutalism
+> Palette: #E07A5F, #3D405B, #F2CC8F, #81B29A
+> Typo: Space Grotesk for titles, IBM Plex Mono for body
+> Layout: Asymetric, intentionally misaligned grid
+> Mood: Raw, authentic, anti-corporate
+> References: brutalistwebsites.com, swissdesignawards.ch"
 
-Utilisez l'IA comme collaborateur, pas comme créateur autonome :
+### Strategy 3: Guided Iteration
 
-1. **Prompt initial** avec contraintes claires
-2. **Évaluation** du premier résultat
-3. **Feedback précis** : "Le spacing est trop régulier, ajoute de la variation"
-4. **Itération** jusqu'à satisfaction
-5. **Polissage manuel** pour les détails fins
+Use AI as a collaborator, not an autonomous creator:
 
-### Stratégie 4 : Créer Votre Propre Design System
+1.  **Initial prompt** with clear constraints
+2.  **Evaluation** of first result
+3.  **Precise feedback**: "Spacing is too regular, add variation"
+4.  **Iteration** until satisfaction
+5.  **Manual polishing** for fine details
 
-Développez un design system qui capture votre identité de marque :
-- Palette de couleurs précise (codes hex)
-- Typographies avec leurs usages
-- Spacing rules (qui peuvent être irréguliers !)
-- Composants UI avec leurs variantes
-- Guidelines de ton et d'atmosphère
+### Strategy 4: Create Your Own Design System
 
-Ensuite, référencez ce design system dans vos prompts à l'IA.
+Develop a design system that captures your brand identity:
+- Precise color palette (hex codes)
+- Typographies with their usages
+- Spacing rules (which can be irregular!)
+- UI components with their variants
+- Tone and atmosphere guidelines
 
-## Les Limites Actuelles (Et Futures) de l'IA
+Then, reference this design system in your prompts to the AI.
 
-### Ce Que l'IA Ne Sait Pas (Encore) Faire
+## Current (And Future) Limits of AI
 
-**Comprendre le contexte de marque**
-- L'IA ne sait pas que votre startup juridique doit inspirer confiance
-- Elle ne comprend pas que votre marque de mode doit être disruptive
-- Elle ne perçoit pas les nuances culturelles de votre audience
+### What AI Cannot Do (Yet)
 
-**Prendre des risques créatifs calculés**
-- L'IA ne va pas spontanément proposer du brutalisme pour un site corporate
-- Elle n'osera pas une palette monochrome pour un site de jouets pour enfants
-- Elle ne suggérera pas de casser délibérément la grille
+**Understand brand context**
+- AI doesn't know your legal startup needs to inspire trust
+- It doesn't understand your fashion brand needs to be disruptive
+- It doesn't perceive cultural nuances of your audience
 
-**Créer une identité visuelle de zéro**
-- L'IA combine, elle ne crée pas (au sens créatif du terme)
-- Elle manque de l'"étincelle" qui fait qu'un design devient iconique
-- Elle n'a pas d'intuition sur ce qui sera tendance dans 6 mois
+**Take calculated creative risks**
+- AI won't spontaneously propose brutalisme for a corporate site
+- It won't dare a monochrome palette for a children's toy site
+- It won't suggest deliberately breaking the grid
 
-### L'Évolution Probable
+**Create a visual identity from scratch**
+- AI combines, it doesn't create (in the creative sense)
+- It lacks the "spark" that makes a design iconic
+- It has no intuition on what will be trendy in 6 months
 
-**Court terme (6-12 mois)** :
-- Meilleure compréhension des briefs textuels
-- Capacité à analyser et reproduire des design systems
-- Intégration native avec Figma/design tools
+### Probable Evolution
 
-**Moyen terme (1-3 ans)** :
-- Génération de variations créatives plus audacieuses
-- Compréhension du contexte de marque via RAG
-- Adaptation automatique aux tendances actuelles
+**Short term (6-12 months)**:
+- Better understanding of text briefs
+- Ability to analyze and reproduce design systems
+- Native integration with Figma/design tools
 
-**Long terme (3-5 ans+)** :
-- IA capable de proposer des directions créatives originales
-- Collaboration designer-IA plus fluide
-- Mais la stratégie créative restera humaine
+**Medium term (1-3 years)**:
+- Generation of bolder creative variations
+- Understanding of brand context via RAG
+- Automatic adaptation to current trends
 
-## Exemples Concrets : Avant/Après
+**Long term (3-5 years+)**:
+- AI capable of proposing original creative directions
+- More fluid designer-AI collaboration
+- But creative strategy will remain human
 
-### Cas 1 : Site E-commerce de Mode
+## Concrete Examples: Before/After
 
-**Approche IA classique** :
-- Gradient violet-bleu
-- Cards produits en grid parfait
-- CTA "Shop Now" violet
-- ➜ Ressemble à tous les sites Shopify par défaut
+### Case 1: Fashion E-commerce Site
 
-**Avec direction créative** :
-- Palette noir & blanc avec accents rouge sang
-- Layout bento-box irrégulier
-- Typo condensée bold
-- Mood editorial/magazine
-- ➜ Se démarque instantanément
+**Classic AI Approach**:
+- Purple-blue gradient
+- Product cards in perfect grid
+- "Shop Now" button purple
+- ➜ Looks like every default Shopify site
 
-### Cas 2 : Portfolio Développeur
+**With creative direction**:
+- Black & white palette with blood red accents
+- Irregular bento-box layout
+- Condensed bold typo
+- Editorial/magazine mood
+- ➜ Stands out instantly
 
-**Approche IA classique** :
-- Fond sombre avec gradient subtil
-- Timeline verticale centrée
-- Cards projets avec hover effects
-- ➜ Portfolio #8374 identique aux autres
+### Case 2: Developer Portfolio
 
-**Avec direction créative** :
-- Inspiré des terminaux années 90
-- Typo monospace, palette green/black
-- Animations ASCII art
-- Navigation CLI-style
-- ➜ Personnalité affirmée, mémorable
+**Classic AI Approach**:
+- Dark background with subtle gradient
+- Centered vertical timeline
+- Project cards with hover effects
+- ➜ Portfolio #8374 identical to others
 
-## Conseils Selon Votre Profil
+**With creative direction**:
+- Inspired by 90s terminals
+- Monospace typo, green/black palette
+- ASCII art animations
+- CLI-style navigation
+- ➜ Strong personality, memorable
 
-### Pour les Designers
+## Advice According to Your Profile
 
-✅ **À faire** :
-- Utilisez l'IA pour prototyper rapidement vos idées
-- Créez d'abord dans Figma, puis laissez l'IA implémenter
-- Gardez le contrôle sur la direction créative
-- Utilisez l'IA pour les variations A/B
+### For Designers
 
-❌ **À éviter** :
-- Déléguer la phase créative à l'IA
-- Accepter le premier résultat sans iteration
-- Ignorer l'opportunité d'accélération qu'offre l'IA
+✅ **To do**:
+- Use AI to rapidly prototype your ideas
+- Create first in Figma, then let AI implement
+- Keep control over creative direction
+- Use AI for A/B variations
 
-### Pour les Développeurs
+❌ **To avoid**:
+- Delegating the creative phase to AI
+- Accepting the first result without iteration
+- Ignoring the acceleration opportunity AI offers
 
-✅ **À faire** :
-- Apprenez à écrire des prompts précis pour le design
-- Créez des design systems réutilisables
-- Utilisez l'IA pour le boilerplate, concentrez-vous sur l'optimisation
-- Collaborez étroitement avec les designers
+### For Developers
 
-❌ **À éviter** :
-- Penser que l'IA remplace le besoin de compétences CSS
-- Copier-coller du code IA sans le comprendre
-- Négliger la performance et l'accessibilité
+✅ **To do**:
+- Learn to write precise prompts for design
+- Create reusable design systems
+- Use AI for boilerplate, focus on optimization
+- Collaborate closely with designers
 
-### Pour les Entrepreneurs/Product Owners
+❌ **To avoid**:
+- Thinking AI replaces the need for CSS skills
+- Copy-pasting AI code without understanding it
+- Neglecting performance and accessibility
 
-✅ **À faire** :
-- Investissez dans au moins quelques heures de conseil design
-- Créez des moodboards et références avant de toucher à l'IA
-- Demandez des itérations jusqu'à avoir quelque chose d'unique
-- Testez avec de vrais utilisateurs
+### For Entrepreneurs/Product Owners
 
-❌ **À éviter** :
-- Penser que l'IA = design gratuit de qualité
-- Lancer un site qui ressemble à tous les autres
-- Négliger votre identité de marque
+✅ **To do**:
+- Invest in at least a few hours of design consulting
+- Create moodboards and references before touching AI
+- Ask for iterations until you have something unique
+- Test with real users
 
-## L'Avenir du Design Web
+❌ **To avoid**:
+- Thinking AI = free quality design
+- Launching a site that looks like all the others
+- Neglecting your brand identity
 
-### Le Nouveau Paradigme
+## The Future of Web Design
 
-Nous entrons dans une ère où :
+### The New Paradigm
 
-**La technique est commoditisée**
-- N'importe qui peut avoir un site techniquement correct
-- Le code HTML/CSS devient une commodity
-- L'accessibilité et la performance de base sont garanties
+We are entering an era where:
 
-**La créativité devient le différenciateur**
-- L'originalité visuelle vaut plus que jamais
-- L'identité de marque forte est cruciale
-- Les détails créatifs font la différence
+**Technique is commoditized**
+- Anyone can have a technically correct site
+- HTML/CSS code becomes a commodity
+- Basic accessibility and performance are guaranteed
 
-**Le workflow se transforme**
-- Design : 80% humain, 20% IA (génération de variantes)
-- Implémentation : 20% humain, 80% IA
-- QA : 50/50 (IA pour les bugs, humain pour la créativité)
+**Creativity becomes the differentiator**
+- Visual originality is worth more than ever
+- Strong brand identity is crucial
+- Creative details make the difference
 
-### Les Compétences qui Comptent
+**The workflow transforms**
+- Design: 80% human, 20% IA (variant generation)
+- Implementation: 20% human, 80% AI
+- QA: 50/50 (AI for bugs, human for creativity)
 
-**En 2024-2025, les designers qui réussissent** :
-- Ont une signature visuelle forte
-- Savent utiliser l'IA comme outil, pas comme béquille
-- Comprennent la psychologie de marque
-- Osent prendre des risques créatifs
+### Skills That Matter
 
-**Les développeurs qui prospèrent** :
-- Maîtrisent l'architecture et la performance
-- Savent écrire des prompts précis
-- Comprennent les principes de design
-- Se concentrent sur l'expérience utilisateur
+**In 2024-2025, designers who succeed**:
+- Have a strong visual signature
+- Know how to use AI as a tool, not a crutch
+- Understand brand psychology
+- Dare to take creative risks
 
-## Conclusion : Human Creativity + AI Execution
+**Developers who thrive**:
+- Master architecture and performance
+- Know how to write precise prompts
+- Understand design principles
+- Focus on user experience
 
-L'observation qui a déclenché cet article est simple : les sites créés par IA se ressemblent parce qu'on laisse l'IA créer au lieu de simplement exécuter.
+## Conclusion: Human Creativity + AI Execution
 
-**La solution n'est pas de rejeter l'IA**, mais de redéfinir son rôle :
-- L'IA est un outil d'exécution, pas de création
-- Le designer reste le directeur créatif
-- Les contraintes sont essentielles pour obtenir de l'originalité
+The observation that triggered this article is simple: AI-created sites look alike because we let AI create instead of just execute.
 
-**Le futur du design web n'est pas** :
-- ❌ Designers vs IA
-- ❌ Tout IA ou rien IA
+**The solution is not to reject AI**, but to redefine its role:
+- AI is an execution tool, not a creation tool
+- The designer remains the creative director
+- Constraints are essential to obtain originality
 
-**Le futur du design web est** :
+**The future of web design is not**:
+- ❌ Designers vs AI
+- ❌ All AI or nothing AI
+
+**The future of web design is**:
 - ✅ Human creativity + AI execution
-- ✅ Vision humaine + vitesse machine
-- ✅ Intuition créative + capacité d'implémentation
+- ✅ Human vision + machine speed
+- ✅ Creative intuition + implementation capacity
 
-La prochaine fois que vous demandez à une IA de créer un site web, posez-vous la question : lui demandez-vous de créer ou d'exécuter votre vision ?
+The next time you ask an AI to create a website, ask yourself: are you asking it to create or to execute your vision?
 
-La différence entre ces deux approches, c'est la différence entre un site qui se fond dans la masse et un site qui se démarque.
+The difference between these two approaches is the difference between a site that blends into the mass and a site that stands out.
 
 ---
 
-**À retenir** :
+**Key Takeaways**:
 
-1. Les sites IA se ressemblent parce qu'ils optimisent pour la moyenne
-2. Avec une référence visuelle, l'IA préserve votre créativité unique
-3. Ne déléguez jamais la phase créative à l'IA
-4. Utilisez des contraintes précises ou des références visuelles
-5. L'IA excelle à exécuter une vision, pas à en créer une
-6. Le design humain + l'implémentation IA = le meilleur des deux mondes
+1.  AI sites look alike because they optimize for the average
+2.  With a visual reference, AI preserves your unique creativity
+3.  Never delegate the creative phase to AI
+4.  Use precise constraints or visual references
+5.  AI excels at executing a vision, not creating one
+6.  Human design + AI implementation = the best of both worlds
 
-**Prochaines étapes** :
+**Next Steps**:
 
-- Créez un moodboard de sites que vous aimez
-- Définissez votre palette de couleurs précise (codes hex)
-- Choisissez vos typographies avec intention
-- Utilisez l'IA avec des contraintes claires
-- Itérez jusqu'à avoir quelque chose d'unique
+- Create a moodboard of sites you like
+- Define your precise color palette (hex codes)
+- Choose your typographies with intention
+- Use AI with clear constraints
+- Iterate until you have something unique
 
-*L'ère des sites génériques est révolue. Place à la créativité humaine augmentée par l'IA.*
+*The era of generic sites is over. Make way for human creativity augmented by AI.*
