@@ -15,11 +15,11 @@ const montserrat = Montserrat({
 });
 
 export const metadata: Metadata = {
-  title: "Maqsoud | AI Developer & Full Stack Engineer",
-  description: "Portfolio of Maqsoud, a Paris-based AI Developer and Full Stack Engineer specializing in generative AI, modern web applications, and scalable architectures.",
-  keywords: ["AI Developer", "Full Stack Engineer", "Next.js", "React", "Python", "Paris", "Portfolio", "Web Development", "Generative AI"],
+  title: "Maqsoud | Agentic Engineer & Full Stack Engineer",
+  description: "Portfolio of Maqsoud, a Paris-based Agentic Engineer and Full Stack Engineer specializing in generative AI, modern web applications, and scalable architectures.",
+  keywords: ["Agentic Engineer", "Full Stack Engineer", "Next.js", "React", "Python", "Paris", "Portfolio", "Web Development", "Generative AI"],
   openGraph: {
-    title: "Maqsoud | AI Developer & Full Stack Engineer",
+    title: "Maqsoud | Agentic Engineer & Full Stack Engineer",
     description: "Building the future of digital experiences with AI and modern tech.",
     url: "https://maqsoud.tech",
     siteName: "Maqsoud Portfolio",
@@ -36,7 +36,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Maqsoud | AI Developer",
+    title: "Maqsoud | Agentic Engineer",
     description: "Building the future of digital experiences with AI and modern tech.",
   },
 };

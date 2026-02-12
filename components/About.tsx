@@ -36,7 +36,7 @@ export default function About() {
 
                     <FadeIn delay={0.2} direction="up">
                         <p className="font-montserrat text-neutral-400 text-lg lg:text-xl leading-relaxed max-w-2xl max-md:text-center">
-                            I'm Maqsoud, an AI Developer and UI/UX enthusiast geared about creating visually compelling identities and seamless digital experiences. With a strategic approach and a keen eye for detail, I help businesses stand out and connect with their audience. Let's create something remarkable together.
+                            I'm Maqsoud, an Agentic Engineer and UI/UX enthusiast geared about creating visually compelling identities and seamless digital experiences. With a strategic approach and a keen eye for detail, I help businesses stand out and connect with their audience. Let's create something remarkable together.
                         </p>
                     </FadeIn>
 

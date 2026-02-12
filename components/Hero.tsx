@@ -26,8 +26,8 @@ export default function Hero() {
 
                             <FadeIn delay={0.4} direction="up">
                                 <h1 className="font-hanken text-5xl lg:text-7xl font-bold leading-[1.1] max-md:text-center">
-                                    AI <br />
-                                    <span className="text-neutral-400">Developer</span>
+                                    Agentic <br />
+                                    <span className="text-neutral-400">Engineer</span>
                                 </h1>
                             </FadeIn>
 
@@ -62,7 +62,7 @@ export default function Hero() {
                             <FadeIn delay={0.8} direction="left">
                                 <p className="text-neutral-400 text-lg lg:text-xl leading-relaxed">
                                     Hi, I'm Maqsoud. <br />
-                                    An AI developer passionate about creating seamless digital experiences that connect and inspire.
+                                    An agentic engineer passionate about creating seamless digital experiences that connect and inspire.
                                 </p>
                             </FadeIn>
                         </div>
