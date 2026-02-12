@@ -8,9 +8,11 @@ import Hero from "@/components/Hero";
 import Projects from "@/components/Projects";
 import Services from "@/components/Services";
 import TechStack from "@/components/TechStack";
+import { getSortedPostsData } from "@/lib/posts";
 
 export default function Home() {
-  return (
+    const posts = getSortedPostsData();
+    return (
     <main>
       <Hero />
       <TechStack />
@@ -18,7 +20,7 @@ export default function Home() {
       <Services />
       <Projects />
       <Experience />
-      {/* <Blog /> */}
+      <Blog posts={posts.slice(0, 3)} />
       <GitHubActivity />
       <Contact />
       <Footer />

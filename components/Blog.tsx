@@ -1,35 +1,14 @@
 import Image from "next/image";
 import Link from "next/link";
 import { FadeIn, StaggerContainer } from "./Animations";
+import { PostData } from "@/lib/posts";
 
-export default function Blog() {
-    const posts = [
-        {
-            id: 1,
-            title: "The Future of AI Agents in 2026",
-            category: "Artificial Intelligence",
-            date: "Oct 12, 2025",
-            image: "/web-developement.png", // Placeholder
-            link: "#",
-        },
-        {
-            id: 2,
-            title: "Optimizing Next.js for Maximum Performance",
-            category: "Development",
-            date: "Sep 28, 2025",
-            image: "/web-developement.png", // Placeholder
-            link: "#",
-        },
-        {
-            id: 3,
-            title: "Mastering Tailwind CSS v4: What's New?",
-            category: "Design Systems",
-            date: "Sep 15, 2025",
-            image: "/web-developement.png", // Placeholder
-            link: "#",
-        },
-    ];
+interface BlogProps {
+    posts: PostData[];
+    showViewAll?: boolean;
+}
 
+export default function Blog({ posts, showViewAll = true }: BlogProps) {
     return (
         <section id="blog" className="w-full bg-black py-16 md:py-24 px-6 border-t border-neutral-900 relative overflow-hidden">
             <div className="max-w-[1400px] mx-auto">
@@ -47,29 +26,31 @@ export default function Blog() {
                             </p>
                         </FadeIn>
                     </div>
-                    <FadeIn delay={0.4} direction="left">
-                        <Link
-                            href="#"
-                            className="text-white hover:text-orange-500 font-hanken font-bold text-lg transition-colors flex items-center gap-2 group"
-                        >
-                            Read all articles
-                            <svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                width="20"
-                                height="20"
-                                viewBox="0 0 24 24"
-                                fill="none"
-                                stroke="currentColor"
-                                strokeWidth="2"
-                                strokeLinecap="round"
-                                strokeLinejoin="round"
-                                className="group-hover:translate-x-1 transition-transform"
+                    {showViewAll && (
+                        <FadeIn delay={0.4} direction="left">
+                            <Link
+                                href="/blog"
+                                className="text-white hover:text-orange-500 font-hanken font-bold text-lg transition-colors flex items-center gap-2 group"
                             >
-                                <line x1="5" y1="12" x2="19" y2="12"></line>
-                                <polyline points="12 5 19 12 12 19"></polyline>
-                            </svg>
-                        </Link>
-                    </FadeIn>
+                                Read all articles
+                                <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    width="20"
+                                    height="20"
+                                    viewBox="0 0 24 24"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    strokeWidth="2"
+                                    strokeLinecap="round"
+                                    strokeLinejoin="round"
+                                    className="group-hover:translate-x-1 transition-transform"
+                                >
+                                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                                    <polyline points="12 5 19 12 12 19"></polyline>
+                                </svg>
+                            </Link>
+                        </FadeIn>
+                    )}
                 </div>
 
                 {/* Blog Grid */}
@@ -79,7 +60,7 @@ export default function Blog() {
                             key={post.id}
                             direction="up"
                         >
-                            <Link href={post.link} className="group flex flex-col gap-6">
+                            <Link href={`/blog/${post.id}`} className="group flex flex-col gap-6">
                                 <div className="relative w-full aspect-[16/10] overflow-hidden rounded-2xl bg-neutral-900/50 border border-neutral-800 group-hover:border-neutral-700 transition-colors">
                                     <Image
                                         src={post.image}
