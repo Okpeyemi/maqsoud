@@ -3,6 +3,15 @@ import { FadeIn, StaggerContainer } from "./Animations";
 export default function Experience() {
     const experiences = [
         {
+            id: 0,
+            period: "Febuary 2026 - Present",
+            role: "Agentic Engineer",
+            company: "ASIN - Agence des Systèmes d'Information et du Numérique - Bénin",
+            description:
+                "Design and development of agentic systems and AI-powered workflows to support digital public services.",
+            skills: ["AI Agents", "Workflow Automation", "System Design", "LLMs"],
+        },
+        {
             id: 1,
             period: "December 2025 - Present",
             role: "Cohezi",
